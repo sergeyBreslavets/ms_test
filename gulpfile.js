@@ -6,7 +6,6 @@ var gulp       = require('gulp');
 // include plug-ins
 var changed        = require('gulp-changed');
 var imagemin       = require('gulp-imagemin');
-var minifyHTML     = require('gulp-minify-html');
 var jshint         = require('gulp-jshint');
 var concat         = require('gulp-concat');
 var stripDebug     = require('gulp-strip-debug');
@@ -91,7 +90,7 @@ gulp.task('imagemin', function() {
 gulp.task('htmlpage', function() {
     gulp.src(htmlSrc)
         .pipe(changed(htmlTarget))
-        .pipe(minifyHTML())
+       
         .pipe(gulp.dest(htmlTarget))
          .pipe(notify({
             title: 'html',
