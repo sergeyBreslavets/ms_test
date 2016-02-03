@@ -14,6 +14,10 @@ var autoprefix     = require('gulp-autoprefixer');
 var cssnano        = require('gulp-cssnano');
 var sass           = require('gulp-sass');
 var notify         = require("gulp-notify");
+
+var spritesmith = require('gulp.spritesmith');
+
+
 //src file
 var htmlSrc        = './src/html/*.html';
 var sassSrc        = './src/sass/styles.scss';
@@ -130,6 +134,21 @@ gulp.task('sass', function () {
 });
 
 
+
+
+gulp.task('sprites', function() {
+
+  var spriteData = gulp.src('./src/img/*.png').pipe(spritesmith());
+
+  spriteData.img
+    .pipe(gulp.dest('img.png'));
+
+  spriteData.css
+    .pipe(gulp.dest('css.css'));
+});
+
+
+
 gulp.task('watch', ['imagemin', 'sass', 'htmlpage',  'scripts'],  function() {
 
    gulp.watch('./src/html/*.html', function() {
@@ -159,6 +178,5 @@ gulp.task('default', function() {
         gulp.run('imagemin'); 
 
 });
-
 
 
