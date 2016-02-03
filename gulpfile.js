@@ -17,13 +17,11 @@ var sass           = require('gulp-sass');
 var notify         = require("gulp-notify");
 //src file
 var htmlSrc        = './src/html/*.html';
-var srcjade        ='./src/jade/*.jade';
-var srcsass        ='./src/sass/styles.scss';
-var imgSrccss      ='./src/img/**/*';
-var imgSrc         = './src/images/**/*';
-var sourcesjs      = [     
-                       'bower_components/modernizr/modernizr.js',
-                       'bower_components/jquery/dist/jquery.js',
+var sassSrc        = './src/sass/styles.scss';
+var imagesSrc      = './src/images/**/*';
+var jsSrc          = [     
+                        'bower_components/modernizr/modernizr.js',
+                        'bower_components/jquery/dist/jquery.js',
                         
                         'bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js',
                         'bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js',
@@ -45,28 +43,24 @@ var sourcesjs      = [
 
 
 //src target
-var csstarget      = './www/assets/styles/';
-var htmlDst        = './www/';
-var sasstarget     = './www/assets/styles';
-var pathjstarget   = './www/assets/scripts/';
-var fontsTargetbs  = './www/assets/fonts/bootstrap/';
-var imgDst         = './www/assets/images';
-var opensanstarget = './www/assets/fonts/open-sans/';
-var imgDstcss      ='./www/assets/styles/img';
+var htmlTarget           = './www/';
+var sassTarget           = './www/assets/styles';
+var jsTarget             = './www/assets/scripts/';
+var fontBootstrapTarget  = './www/assets/fonts/bootstrap/';
+var imagesTarget         = './www/assets/images';
+var opensansTarget       = './www/assets/fonts/open-sans/';
 // tasks 
-  
- 
 
 gulp.task('copyopensans', function() {
     gulp.src('./bower_components/open-sans/fonts/*/*')
-        .pipe(gulp.dest(opensanstarget));
+        .pipe(gulp.dest(opensansTarget));
 });
 
 gulp.task('copyfont', function() {
     gulp.src([ './bower_components/bootstrap-sass/assets/fonts/bootstrap/*', 
                './bower_components/components-font-awesome/fonts/*'
              ])
-        .pipe(gulp.dest(fontsTargetbs))
+        .pipe(gulp.dest(fontBootstrapTarget))
          .pipe(notify({
             title: 'fontIconBootstrap',
             message: 'copy Complide'
@@ -84,10 +78,10 @@ gulp.task('jshint', function() {
 });
 // minify new images
 gulp.task('imagemin', function() {
-    gulp.src(imgSrc)
-        .pipe(changed(imgDst))
+    gulp.src(imagesSrc)
+        .pipe(changed(imagesTarget))
         .pipe(imagemin())
-        .pipe(gulp.dest(imgDst))
+        .pipe(gulp.dest(imagesTarget))
          .pipe(notify({
             title: 'imagemin',
             message: 'imagemin-complete the work!'
@@ -96,9 +90,9 @@ gulp.task('imagemin', function() {
 // minify new or changed HTML pages
 gulp.task('htmlpage', function() {
     gulp.src(htmlSrc)
-        .pipe(changed(htmlDst))
+        .pipe(changed(htmlTarget))
         .pipe(minifyHTML())
-        .pipe(gulp.dest(htmlDst))
+        .pipe(gulp.dest(htmlTarget))
          .pipe(notify({
             title: 'html',
             message: 'html-complete the work!'
@@ -106,12 +100,12 @@ gulp.task('htmlpage', function() {
 });
 // JS concat, strip debugging and minify
 gulp.task('scripts', function() {
-   gulp.src(sourcesjs)
+   gulp.src(jsSrc)
         .pipe(concat('script.js'))
         .pipe(stripDebug())
         .pipe(uglify())
 
-    .pipe(gulp.dest(pathjstarget))
+    .pipe(gulp.dest(jsTarget))
     .pipe(notify({
             title: 'scripts',
             message: 'scripts-complete the work!'
@@ -121,7 +115,7 @@ gulp.task('scripts', function() {
 
 gulp.task('sass', function () {
    
-  gulp.src(srcsass) 
+  gulp.src(sassSrc) 
   .pipe(notify({
             title: 'sass',
             message: 'start!'
@@ -129,7 +123,7 @@ gulp.task('sass', function () {
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefix('last 2 versions'))
     .pipe(minifyCSS())
-    .pipe(gulp.dest(sasstarget))
+    .pipe(gulp.dest(sassTarget))
     .pipe(notify({
             title: 'sass',
             message: 'sass-complete the work!'
