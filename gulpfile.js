@@ -16,35 +16,34 @@ var minifyCSS      = require('gulp-minify-css');
 var sass           = require('gulp-sass');
 var notify         = require("gulp-notify");
 //src file
-var imgSrc         = './src/images/**/*';
-var sourcesjs      =  [     
-                           'bower_components/modernizr/modernizr.js',
-                           'bower_components/jquery/dist/jquery.js',
-                            
-                            'bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js',
-                            'bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js',
-                            'bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js',
-                            'bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js',
-                            'bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js',
-                            'bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js',
-                            'bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js',
-                            'bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js',
-                            'bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js',
-                            'bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js',
-                            'bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js',
-                            'bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js',
-                            
-                            'bower_components/waterwheelcarousel/js/jquery.waterwheelCarousel.js',
-
-                           './src/scripts/*.js'
-
-                           
-                            ];
-
 var htmlSrc        = './src/html/*.html';
 var srcjade        ='./src/jade/*.jade';
 var srcsass        ='./src/sass/styles.scss';
 var imgSrccss      ='./src/img/**/*';
+var imgSrc         = './src/images/**/*';
+var sourcesjs      = [     
+                       'bower_components/modernizr/modernizr.js',
+                       'bower_components/jquery/dist/jquery.js',
+                        
+                        'bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js',
+                        'bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js',
+                        'bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js',
+                        'bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js',
+                        'bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js',
+                        'bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js',
+                        'bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js',
+                        'bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js',
+                        'bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js',
+                        'bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js',
+                        'bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js',
+                        'bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js',
+                        
+                        'bower_components/waterwheelcarousel/js/jquery.waterwheelCarousel.js',
+
+                       './src/scripts/*.js'
+                    ];
+
+
 //src target
 var csstarget      = './www/assets/styles/';
 var htmlDst        = './www/';
@@ -52,17 +51,11 @@ var sasstarget     = './www/assets/styles';
 var pathjstarget   = './www/assets/scripts/';
 var fontsTargetbs  = './www/assets/fonts/bootstrap/';
 var imgDst         = './www/assets/images';
-
 var opensanstarget = './www/assets/fonts/open-sans/';
-var myriadprotarget = './www/assets/fonts/';
 var imgDstcss      ='./www/assets/styles/img';
 // tasks 
   
- gulp.task('copymyriadpro', function() {
-    gulp.src('./src/font/*/*')
-        .pipe(gulp.dest(myriadprotarget));
-
-});
+ 
 
 gulp.task('copyopensans', function() {
     gulp.src('./bower_components/open-sans/fonts/*/*')
@@ -81,7 +74,6 @@ gulp.task('copyfont', function() {
     }));
 
 });
-
 
 // JS hint task
 gulp.task('jshint', function() {
@@ -113,11 +105,6 @@ gulp.task('htmlpage', function() {
     }));
 });
 // JS concat, strip debugging and minify
-
-
-
-
-
 gulp.task('scripts', function() {
    gulp.src(sourcesjs)
         .pipe(concat('script.js'))
@@ -132,21 +119,6 @@ gulp.task('scripts', function() {
 });
 
 
-// CSS concat, auto-prefix and minify
-gulp.task('styles', function() {
-    gulp.src(['./src/styles/*.css'])
-        .pipe(concat('styles.css'))
-        .pipe(autoprefix('last 2 versions'))
-        .pipe(minifyCSS())
-        .pipe(gulp.dest(csstarget))
-            .pipe(notify({
-            title: 'styles',
-            message: 'styles-complete the work!'
-    }));
-});
-
-
-
 gulp.task('sass', function () {
    
   gulp.src(srcsass) 
@@ -155,50 +127,24 @@ gulp.task('sass', function () {
             message: 'start!'
     }))
     .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefix('last 2 versions'))
     .pipe(minifyCSS())
     .pipe(gulp.dest(sasstarget))
     .pipe(notify({
             title: 'sass',
             message: 'sass-complete the work!'
-
     }));
 });
 
-gulp.task('whtml', function() {
-    // watch for HTML changes
+
+gulp.task('watch', ['imagemin', 'sass', 'htmlpage',  'scripts'],  function() {
+
    gulp.watch('./src/html/*.html', function() {
     gulp.run('htmlpage');
     });
-});
-
-
-gulp.task('imagemincss', function() {
-    gulp.src(imgSrccss)
-        .pipe(changed(imgDstcss))
-        .pipe(imagemin())
-        .pipe(gulp.dest(imgDstcss))
-        .pipe(notify({
-            title: 'imagemincss',
-            message: 'imagemincss-complete the work!'
-    }));
-});
-
-// default gulp task
-gulp.task('watch', ['imagemin', 'sass', 'htmlpage',  'scripts', /*'styles',  'imagemincss' */], function() {
-    // watch for HTML changes
-   gulp.watch('./src/html/*.html', function() {
-    gulp.run('htmlpage');
-    });
-
-    // watch for JS changes
     gulp.watch('./src/scripts/*.js', function() {
         gulp.run('jshint', 'scripts');
     });
-
-    // watch for CSS changes
-    // gulp.watch('./src/styles/*.css', function() {
-    //     gulp.run('styles');
-    // });
     gulp.watch('./src/sass/{,*/}*.{scss,sass}', function() {
         gulp.run('sass');
     });
@@ -206,15 +152,10 @@ gulp.task('watch', ['imagemin', 'sass', 'htmlpage',  'scripts', /*'styles',  'im
         gulp.run('imagemin');
     });
 
-    //  gulp.watch('./src/img/*', function() {
-    //     gulp.run('imagemincss');
-    // });
-  
-
- 
-
-
 });
+
+
+
 /// gulp default
 gulp.task('default', function() {
  
@@ -223,9 +164,7 @@ gulp.task('default', function() {
         gulp.run('styles');
         gulp.run('sass');
         gulp.run('imagemin'); 
-        gulp.run('copyfont');
-       // gulp.run('imagemincss'); 
-    
+
 });
 
 
