@@ -11,7 +11,7 @@ var concat         = require('gulp-concat');
 var stripDebug     = require('gulp-strip-debug');
 var uglify         = require('gulp-uglify');
 var autoprefix     = require('gulp-autoprefixer');
-var minifyCSS      = require('gulp-minify-css');
+var cssnano        = require('gulp-cssnano');
 var sass           = require('gulp-sass');
 var notify         = require("gulp-notify");
 //src file
@@ -121,7 +121,7 @@ gulp.task('sass', function () {
     }))
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefix('last 2 versions'))
-    .pipe(minifyCSS())
+    .pipe(cssnano())
     .pipe(gulp.dest(sassTarget))
     .pipe(notify({
             title: 'sass',
