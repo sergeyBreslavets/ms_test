@@ -64,6 +64,4 @@ $icon-font-path: '../fonts/bootstrap/' !default;
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/utilities";
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities";
 
-
-
-@import "_modules";
+@import "sprite";

@@ -1,11 +1,10 @@
 {
-  "name": "ms_test",
-  "version": "0.0.0",
+  "name": "gulp_t_clear",
+  "version": "0.0.1",
   "authors": [
-    ""
+    "sergey Br"
   ],
   "license": "MIT",
-  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
@@ -13,14 +12,12 @@
     "test",
     "tests"
   ],
-  "devDependencies": {
-    "bootstrap-sass": "~3.3.5",
-    "components-font-awesome": "~4.4.0",
-    "imagesloaded": "~3.1.8",
-    "jquery": "~2.1.4",
-    "open-sans": "~1.1.0"
-  },
   "dependencies": {
-    "modernizr": "~2.8.3"
+    "normalize.css": "*",
+    "jquery": "2.*"
+  },
+  "devDependencies": {
+    "bootstrap-sass": "~3.3.6",
+    "components-font-awesome": "~4.5.0"
   }
 }
