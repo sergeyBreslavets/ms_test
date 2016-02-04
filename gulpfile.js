@@ -49,6 +49,7 @@ var path = {
                  'bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js',
                  'bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js',
                  'bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js',
+                 'bower_components/pushy/js/pushy.js',
         
 
                  'src/js/main.js'
