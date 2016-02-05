@@ -14,7 +14,8 @@
   ],
   "dependencies": {
     "normalize.css": "*",
-    "jquery": "2.*"
+    "jquery": "2.*",
+    "modernizr": "~2.8.3"
   },
   "devDependencies": {
     "bootstrap-sass": "~3.3.6",

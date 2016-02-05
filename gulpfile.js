@@ -34,7 +34,7 @@ var path = {
     src: { //Пути откуда брать исходники
         html:    'src/html/*.html', //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
         js:  [     
-                 'bower_components/modernizr/modernizr.js',
+                 'bower_components/modernizr.js',
                  'bower_components/jquery/dist/jquery.js',
                 
                  'bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js',
@@ -52,7 +52,11 @@ var path = {
                  'bower_components/pushy/js/pushy.js',
         
 
-                 'src/js/main.js'
+                 'src/js/main.js',
+                 'src/js/partials/_visual.js',
+                 'src/js/partials/help.js',
+                 'src/js/partials/_common.js'
+
               ]   ,//В стилях и скриптах нам понадобятся только main файлы
         style:   'src/style/styles.scss',
         images:  'src/images/**/*.*', //Синтаксис images/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
@@ -134,7 +138,7 @@ gulp.task('js:build', function () {
 gulp.task('style:build', function () {
     gulp.src(path.src.style) //Выберем наш main.scss
         .pipe(sourcemaps.init()) //То же самое что и с js
-        .pipe(sass()) //Скомпилируем
+        .pipe(sass().on('error', sass.logError))//Скомпилируем
         .pipe(prefixer()) //Добавим вендорные префиксы
         .pipe(cssmin()) //Сожмем
         .pipe(sourcemaps.write())

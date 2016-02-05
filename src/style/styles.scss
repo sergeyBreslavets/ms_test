@@ -67,6 +67,7 @@ $icon-font-path: '../fonts/bootstrap/' !default;
 @import "sprite";
 
 @import "partials/open-sans";
-@import "partials/pushy";
 
-@import "partials/main";
+@import "partials/_module";
+
+@import "partials/module-custom";
