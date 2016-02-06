@@ -51,7 +51,7 @@ var path = {
                  'bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js',
                  'bower_components/pushy/js/pushy.js',
         
-
+                  'src/js/partials/hoverable_and_touchable.js',
                  'src/js/main.js',
                  'src/js/partials/_visual.js',
                  'src/js/partials/help.js',
