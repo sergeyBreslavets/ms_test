@@ -146,7 +146,40 @@ color: #fff;
 .mt-30{
 	margin-top: 30px !important;
 }
+.warning-duma{
+	margin-right: 15px;
+	border: 1px dashed #fff;
+	font-size: 14px;
+    text-transform: uppercase;
+	color: #fff;
+	margin-top: 24px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
 
+	.warning-duma__text{
+		display: inline-block;
+		    margin-left: 24px;
+	}
+} 
+
+
+ .countdown-time{
+     background: url('../images/test/timer.png') no-repeat center;
+	background-size: contain;
+
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    margin-top: 10px;
+    padding-top: 6px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+ }
+
+.ml-12{
+	margin-left: 12px;
+}
 .icon-button-next{
     cursor: pointer;
 	background: url('../images/test/buttom-next.png') no-repeat center;
@@ -165,4 +198,10 @@ color: #fff;
        padding-right: 30px;
     padding-left: 1px;
    
+}
+.icon-hand{
+   background: url('../images/test/icon-hand.png') no-repeat center;
+    width: 32px;
+    height: 36px;
+   display: inline-block;
 }
