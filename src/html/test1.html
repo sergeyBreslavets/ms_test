@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <title>testMS</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+</head>
+
+<body>
+    <section class="module module--full-height" data-background="assets/images/test/back-test.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12  col-md-12  col-lg-12  module__border ">
+                    <div class="row">
+                        <div class="col-xs-4 col-sm-1 col-md-1 col-lg-1"><img src="assets/images/logo.png" alt="Дума 2016" class="module__logo">
+                        </div>
+                        <div class=" col-xs-6 col-sm-5 col-sm-offset-4 col-md-5 col-md-offset-5 col-lg-4 col-lg-offset-6">
+                            <span class="module__top_text open-sans-exboltit">567 340 <span>горят сердцами</span>
+                            </span>
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1">
+                            <div class="module__burger">
+                                <a href="#" id="my-button"><img src="assets/images/burger_1.png" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+
+                           
+
+                    <div class="row">
+                            <div class="col-xs-12  center-block">
+                                <div class="module__title-test open-sans-exboltit"> 
+                                             Какой из тебя депутат?
+                                  </div>
+                            </div>
+                            <div class="col-xs-12  center-block text-center ">
+                            <span class="module__title-testsubtext open-sans-lite "> Ответь на вопросы по истории госдумы и узнай,<br>можешь ли ты стать достойным героем <br> своего дистрикта! </span></div>
+                    </div>
+
+                     <!-- вопросы  -->
+                    <div class="row">
+                        
+                          <div class="col-sm-12 text-center hidden-xs">
+                                  <ul class=" pagination text-center module__paginator-custom ">
+                                      <li id="pstep_1"  class="disabled open-sans-lite error-test"><a href="#" data-step="1">1</a></li>
+                                      <li id="pstep_2"  class="disabled open-sans-lite good-test"><a href="#" data-step="2">2</a></li>
+                                      <li id="pstep_3"  class="disabled open-sans-exboltit active-test"><a href="#" data-step="3">3</a></li>
+                                      <li id="pstep_4"  class="disabled open-sans-lite"><a href="#" data-step="4">4</a></li>
+                                      <li id="pstep_5"  class="disabled open-sans-lite"><a href="#" data-step="5">5</a></li>
+                                      <li id="pstep_6"  class="disabled open-sans-lite"><a href="#" data-step="6">6</a></li>
+                                      <li id="pstep_7"  class="disabled open-sans-lite"><a href="#" data-step="7">7</a></li>
+                                      <li id="pstep_8"  class="disabled open-sans-lite"><a href="#" data-step="8">8</a></li>
+                                      <li id="pstep_9"  class="disabled open-sans-lite"><a href="#" data-step="9">9</a></li>
+                                      <li id="pstep_10" class="disabled open-sans-lite"><a href="#" data-step="10">10</a></li>
+                                    
+                                  </ul>
+                         </div><!-- /.col-md-12 -->
+                         <div class="col-sm-12 text-center hidden-sm hidden-md hidden-lg">
+                            <p class="mobile-pagination">
+                                <span class="active">1</span> из <span id="all_question">12</span>
+                            </p>
+                         </div><!-- /.col-md-12 -->
+                        
+                    </div>
+                        
+                       
+
+
+
+
+
+
+
+
+
+
+
+
+                    <div class="menu " id="left-menu">
+                        <div class="menu__burger-close" id="btn_close"><img src="assets/images/burger_2.png" alt=""></div>
+                        <ul class="menu__nav">
+                            <li class="menu__nav-title open-sans-lite"><a href="#">Главная</a></li>
+                            <li class="menu__nav-step  open-sans-regular">I Этап</li>
+                            <li class="menu__nav-title open-sans-lite"><a href="#">3наток думы</a></li>
+                            <li class="menu__nav-title open-sans-lite"><a href="#">Кресло депутата</a></li>
+                            <li class="menu__nav-heros open-sans-lite"><a href="#heros">Герои</a></li>
+                            <li class="menu__nav-step  menu__nav-stepfix open-sans-regular">II Этап</li>
+                            <li class="menu__nav-title menu__nav-titlefix open-sans-lite">подпишись чтобы выжить</li>
+                            <li class="input-group menu__nav-input">
+                                <input type="text" class="form-control">
+                                <div class="input-group-addon"><a href="#"><i class="fa fa-paper-plane-o"></i></a></div>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+   
+
+    <script src="assets/js/main.js"></script>
+    <script>
+    /*убрать в visual */
+    $('#my-button').click(function() {
+        var win_w = $(window).width();
+        if (win_w < 768) {
+            $('#left-menu').removeClass('menu');
+            $('#left-menu').addClass('menu_smal');
+            $('#left-menu').addClass('menu-open-smal');
+        } else {
+            $('#left-menu').removeClass('menu_smal');
+            $('#left-menu').addClass('menu');
+            $('#left-menu').addClass('menu-open');
+        }
+
+    });
+
+    $('#btn_close').click(function() {
+        var win_w = $(window).width();
+        if (win_w < 768) {
+
+
+            $('#left-menu').removeClass('menu-open-smal');
+        } else {
+
+            $('#left-menu').removeClass('menu-open');
+        }
+    });
+    $(window).resize(function() {
+        $('#left-menu').removeClass('menu');
+        $('#left-menu').removeClass('menu_smal');
+        $('#left-menu').addClass('menu');
+        $('#left-menu').removeClass('menu-open-smal');
+        $('#left-menu').removeClass('menu-open');
+    });
+
+
+
+    </script>
+</body>
+
+</html>
