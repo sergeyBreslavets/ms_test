@@ -1,3 +1,6 @@
+.module__border-fix{
+	    min-height: 900px;
+}
 .module__title-test {
     background: url('../images/test/test-title.png') no-repeat center;
     background-size: contain;
@@ -220,6 +223,10 @@
 
 .ml-12 {
     margin-left: 12px;
+}
+
+.mt-130{
+	margin-top: 130px;
 }
 
 .icon-button-next {
