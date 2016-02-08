@@ -1039,11 +1039,16 @@
 
 .fix-fs {
     padding: 4px;
-    padding-left: 7px !important;
-    padding-right: 7px !important;
+    padding-left: 8px!important;
+    padding-right: 8px!important;
 }
 
-
+.fix-tw{
+        padding-left: 7px !important;
+}
+.fix-vk{
+        padding-left: 5px;
+}
 /*no-hover*/
 
 .module-title-big {
