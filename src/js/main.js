@@ -1,24 +1,37 @@
-$("#left-btn").on('click', function(){
+var MOUSE_CLICK = "click";
+var MOUSE_DOWN = "mousedown";
+var MOUSE_UP = "mouseup";
+var isTouch = false;
+
+if  ("ontouchstart" in window || window.DocumentTouch && document instanceof DocumentTouch) {
+	MOUSE_CLICK = "touchstart";
+	MOUSE_DOWN = "touchstart";
+	MOUSE_UP = "touchend";
+	isTouch = true;
+}
+
+$("#left-btn").on(MOUSE_DOWN,function(){
     $('#wrap').transition({x:'-50%'}, 500);
 //    $("#heros-bg").css("background-image","url(assets/images/geleznyak.jpg)");
     $("#heros-bg").fadeIn();
     
     
 });
-$("#right-btn").on('click', function(){
+$("#right-btn").on(MOUSE_DOWN,function(){
     $('#wrap').transition({x:'0'}, 500);
     $("#heros-bg").fadeOut();
 });
 
-$(".modile__infoDep-like-but").on('click', function(){
+$(".modile__infoDep-like-but").on(MOUSE_DOWN,function(){
     $(".modile__infoDep-change").fadeOut();
     $(".modile__infoDep-after").delay(500).fadeIn();
 });
 
-$(".module__tringl_edros").on('click', function(){
-    if ($(window).width() <= '750'){
+$(".module__tringl_edros").on(MOUSE_DOWN,function(){
+    if ($(window).width() <= '768'){
         $('#wrap-map').transition({x:'-33%'}, 500);
         $('#center-party-box').fadeIn();
+        $('.wrap-map-bg').fadeIn();
     } else {
         $('#center-party-box').fadeIn();
     }
@@ -26,16 +39,17 @@ $(".module__tringl_edros").on('click', function(){
     
 });
 
-$("#center-party-box .btn-back").on('click', function(){
+$("#center-party-box .btn-back").on(MOUSE_DOWN,function(){
     $('#wrap-map').transition({x:'0'}, 500);
+    $('.wrap-map-bg').fadeOut();
 });
 
-$("#right-chang-box .btn-back").on('click', function(){
+$("#right-chang-box .btn-back").on(MOUSE_DOWN,function(){
     $('#wrap-map').transition({x:'-33%'}, 500);
 });
 
-$(".module__list_party li").on('click', function(){
-    if ($(window).width() <= '750'){
+$(".module__list_party li").on(MOUSE_DOWN,function(){
+    if ($(window).width() <= '768'){
         $('#wrap-map').transition({x:'-66%'}, 500);
         $('#right-chang-box').fadeIn();
     } else {
@@ -45,7 +59,7 @@ $(".module__list_party li").on('click', function(){
     
 });
 
-//$("#right-btn").on('click', function(){
+//$("#right-btn").on(MOUSE_DOWN,function(){
 //    $('#wrap').transition({x:'0'}, 500);
 //    $("#heros-bg").fadeOut();
 //});
@@ -69,7 +83,7 @@ obj.peoples[0] = {party:"Единая россия",
 
 obj.peoples[1] = {party:"Единая россия",
                   name:"Кожвеникова Мария",
-                  quote:"вторая цитата",
+                  quote:"ОЧЕНЬ ВАЖНО, ЧТОБЫ ЦЕННОСТНЫЕ ОРИЕНТИРЫ, ЛЮБОВЬ К РОДИНЕ, ПАТРИОТИЗМ ФОРМИРОВАЛИСЬ С ДЕТСТВА И БЫЛИ НЕОТЪЕМЛЕМОЙ ЧАСТЬЮ ПРОЦЕССА ВОСПИТАНИЯ И СТАНОВЛЕНИЯ ГРАЖДАНИНА",
                   birthday:"30 ИЮНЯ 1980 Г. (35 ЛЕТ)",
                   rating:"25",
                   skils:"актриса",
