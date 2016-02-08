@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <section class="module module--full-height" data-background="assets/images/test/back-test.jpg">
+    <section class="module " data-background="assets/images/test/back-test.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12  col-md-12  col-lg-12  module__border module__border-fix">
@@ -152,44 +152,7 @@
    
 
     <script src="assets/js/main.js"></script>
-    <script>
-    /*убрать в visual */
-    $('#my-button').click(function() {
-        var win_w = $(window).width();
-        if (win_w < 768) {
-            $('#left-menu').removeClass('menu');
-            $('#left-menu').addClass('menu_smal');
-            $('#left-menu').addClass('menu-open-smal');
-        } else {
-            $('#left-menu').removeClass('menu_smal');
-            $('#left-menu').addClass('menu');
-            $('#left-menu').addClass('menu-open');
-        }
-
-    });
-
-    $('#btn_close').click(function() {
-        var win_w = $(window).width();
-        if (win_w < 768) {
-
-
-            $('#left-menu').removeClass('menu-open-smal');
-        } else {
-
-            $('#left-menu').removeClass('menu-open');
-        }
-    });
-    $(window).resize(function() {
-        $('#left-menu').removeClass('menu');
-        $('#left-menu').removeClass('menu_smal');
-        $('#left-menu').addClass('menu');
-        $('#left-menu').removeClass('menu-open-smal');
-        $('#left-menu').removeClass('menu-open');
-    });
-
-
-
-    </script>
+    
 </body>
 
 </html>
