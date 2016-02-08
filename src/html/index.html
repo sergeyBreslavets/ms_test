@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <section class="module module--full-height" data-background="assets/images/background.jpg">
+    <section class="module" data-background="assets/images/background.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12  col-md-12  col-lg-12  module__border ">
@@ -35,9 +35,27 @@
                                                                           будь готов к новым голодным играм!</span>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 module__map_rel"><img class="module__map" src="assets/images/mosrumap.png" alt="карта"></div>
-                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-5">
+                    <div class="row" id="map-box">
+                       <div id="wrap-map">
+                       <div id="left-map-box" class="col-xs-4 module__map_rel">
+                           
+                       
+                       
+
+                            <div class="module__map">
+                                
+                                <div class="module__tringl_kprf"><span class="open-sans-exboltit">кпрф</span></div>
+                                <div class="module__tringl_ldpr"><span class="open-sans-exboltit">лдпр</span></div>
+                                <div class="module__tringl_sprross"><span class="open-sans-exboltit">справедливая россия</span></div>
+                                <div class="module__tringl_edros"><span class="open-sans-exboltit"></span></div>
+                                
+                            </div>
+                            
+                        
+                        
+                        </div>
+                        <div id="center-party-box" class="col-xs-4 col-sm-2 col-md-3 col-lg-4">
+                        
                             <h4 class="module__title-party open-sans-exboltit">Единая россия</h4>
                             <ul class="module__list_party open-sans-lite">
                                 <li>Антошкин Николай Тимофеевич</li>
@@ -56,21 +74,41 @@
                                 <li>Панина Елена Владимировна</li>
                                 <li>Ресин Владимир Иосифович</li>
                             </ul>
+                            <div class="btn-back">назад</div>
                         </div>
-                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 modile__rel hidden-xs hidden-sm">
+                        <div id="right-chang-box" class="col-xs-4 modile__rel">
+<!--                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 modile__rel hidden-xs hidden-sm">-->
                             <div class="modile__infoDep">
-                                <div class="module__infoDep-place"><span class="open-sans-lite">25</span></div>
-                                <div class="module__infoDep-text"> - место в Рейтинге (из 450 депутатов)</div>
-                                <img class="modile__infoDep-photo" src="" alt="">
-                                <div class="modile__infoDep-line"></div>
-                                <div class="modile__infoDep-line2"></div>
-                                <div class="modile__infoDep-like"></div>
-                                <div class="modile__infoDep-line3"></div>
-                                <div class="modile__infoDep-kol">66701</div>
-                                <div class="modile__infoDep-heart"></div>
-                                <div class="modile__infoDep-line4"></div>
-                                <div class="modile__infoDep-kol2">56786</div>
+<!--                                <div class="module__infoDep-place"><span class="open-sans-lite">25</span></div>-->
+<!--                                <div class="module__infoDep-text"> - место в Рейтинге (из 450 депутатов)</div>-->
+                                    
+                                <img class="modile__infoDep-photo" id="people-photo" src="assets/images/face_kozevnikova.jpg" alt=""> 
+                                <div class="modile__infoDep-change">
+                                   <img class="modile__infoDep-photo" src="" alt="">    
+                                    <div class="modile__infoDep-line"></div>
+                                    <div class="modile__infoDep-yes open-sans-regular">да!</div>
+                                    <div class="modile__infoDep-like-but"></div>
+                                    <div class="modile__infoDep-no open-sans-lite">нет</div>
+                                    <div class="modile__infoDep-dislike-but"></div>
+                                </div>
+                                
+                                <div class="modile__infoDep-after">
+                                  <img class="modile__infoDep-photo" src="" alt="">   
+                                   <div class="module__infoDep-place-after"><span class="open-sans-lite">25</span></div>
+                                    <div class="modile__infoDep-line-after"></div>
+                                    <div class="modile__infoDep-bigline-after">66 000</div>
+                                    <div class="modile__infoDep-smline-after">55 000</div>
+                                    <div class="modile__infoDep-like-but-after-big"></div>
+                                    <div class="modile__infoDep-dislike-but-after-big"></div>
+                                    <div class="modile__infoDep-like-but-after-small"></div>
+                                    <div class="modile__infoDep-dislike-but-after-small"></div>
+                                    
+                                </div>
                             </div>
+                            <div class="btn-back">назад</div>
+<!--                        </div>-->
+                        </div>
+                        
                         </div>
                     </div>
                     <div class="menu " id="left-menu">
@@ -113,46 +151,89 @@
             </div>
         </div>
     </section>
-    <section class="module  module--full-height" data-background="assets/images/heros.jpg" id="heros">
-        <div class="container">
-            <div class="row">
-                <div class="center-block text-center"><img src="assets/images/logo.png" alt="Дума 2016"></div>
-                <div class="col-xs-12  center-block module__title-infoperson open-sans-norm-it"><span class="module__title-line "></span>партия<span class="module__title-line"></span>
-                    <br> единая россия</div>
+    <section class="module" data-background="assets/images/heros.jpg" id="heros">
+       <div class="container-fluid" id="heros-box">
+         <div id="heros-bg"></div>
+          <div class="center-block text-center gerb"><img src="assets/images/logo.png" alt="Дума 2016"></div>
+          <div class="row">
+                        <div class="col-xs-12  center-block module__title-infoperson open-sans-norm-it">
+                            <span class="module__title-line "></span>партия<span class="module__title-line"></span>
+                            </div>
+           </div>
+           <div id="wrap">
+               <div class="col-xs-6" id="left-box">
+<!--                 <div class="center-block text-center"><img src="assets/images/logo.png" alt="Дума 2016"></div>-->
+                  <div class="row">
+<!--
+                        <div class="col-xs-12  center-block module__title-infoperson open-sans-norm-it">
+                            <span class="module__title-line "></span>партия<span class="module__title-line"></span>
+                            </div>
+-->
+                        <div class="col-xs-12  center-block">
+                            <div class="module-title-big open-sans-exbolt text-center">Герои</div>
+                        </div>
+                         <div class="col-xs-12  center-block module__title-infoperson open-sans-norm-it">
+                            <span class="module__title-line"></span><span id="party-left"></span><span class="module__title-line"></span>
+                         </div>
+
+                         <div class="col-xs-12  center-block text-center">
+                            <div class="module__citata open-sans-norm-it col-md-4 col-md-offset-4" id="quote">
+                                «Очень важно, чтобы ценностные ориентиры, любовь к Родине, патриотизм формировались с детства и были неотъемлемой частью процесса воспитания и становления гражданина»
+                            </div>
+                        </div>
+                             <div class="col-xs-12  center-block text-center">
+                                <div class="module__citata-name open-sans-lite" id="left-name">Сергей Железняк</div>
+                                      </div>
+
+                     <div class="center-block text-center">
+                        <div class="icon-op fix-bnt-heros" id="left-btn"></div>
+                    </div>
+
+                    </div>
+               </div>
+               
+               
+               
+               
+               <div class="col-xs-6 module" id="right-box" data-background="">
+<!--                  <div class="center-block text-center"><img src="assets/images/logo.png" alt="Дума 2016"></div>-->
+                  <div class="row">
+                
+                <div class="col-xs-12  center-block module__title-infoperson open-sans-norm-it" id="party-right">
+<!--                   <span class="module__title-line "></span>партия<span class="module__title-line"></span><br>-->
+                    единая россия</div>
                 <div class="col-xs-12 center-block">
-                    <div class="module__title-name open-sans-exbolt">Сергей Железняк</div>
+                    <div class="module__title-name open-sans-exbolt" id="right-name">Сергей Железняк</div>
                 </div>
-                <div class="col-xs-12  center-block module__title-infoperson open-sans-lite"><span class="module__title-line "></span> 30 июля 1970 г. (45 лет) <span class="module__title-line"></span></div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12  col-sm-6 col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-2">
-                    <div class="module__infoDep-place fix-place"><span class="open-sans-lite">39</span>
+                <div class="col-xs-12  center-block module__title-infoperson open-sans-lite"><span class="module__title-line "></span><span id="birthday"> 30 июля 1970 г. (45 лет)</span> <span class="module__title-line"></span></div>
+
+                <div class="col-xs-6  col-sm-6 col-md-5 col-md-offset-1 col-lg-3 col-lg-offset-3">
+                    <div class="module__infoDep-place fix-place"><span class="open-sans-lite" id="rating">39</span>
                     </div>
                     <span class="module__place-text open-sans-exbolt"> место в рейтинге <br>
                              <span class="open-sans-regular">(из 450 депутатов)</span>
                     </span>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 ">
+                <div class="col-xs-6 col-sm-6 col-md-5 col-lg-3 ">
                     <div class="icon-lightning module__icon-skil"></div>
                     <span class="module__place-text open-sans-exbolt"> особые навыки:<br>
-                             <span class="open-sans-regular">сми держит в напряжении</span>
+                             <span class="open-sans-regular" id="skils">сми держит в напряжении</span>
                     </span>
                 </div>
-            </div>
-            <div class="row">
+
                 <div class="col-xs-12 col-sm-12 col-md-12  col-lg-12  ">
                     <div class="module__border-money">
                         <div class="row">
-                            <div class="col-xs-12  col-sm-6 col-md-6  col-lg-6">
+                            <div class="col-xs-6  col-sm-6 col-md-6  col-lg-6 border-money-left">
                                 <h5 class="module__title-infodep-money open-sans-norm-it text-right income"><li>доход</li></h5>
-                                <ul class="module__list-money open-sans-norm-it income-list">
-                                    <li><span>2011</span> 3 434 259 руб </li>
-                                    <li class="fix-li"><span>2014</span> 5 557 218 руб</li>
+                                <ul class="module__list-money open-sans-norm-it income-list text-right" id="list-profit">
+                                    <li><span class="year">2011</span> <span class="money">3 434 259 руб</span> </li>
+                                    <li class="fix-li"><span>2014</span> <span class="money">5 557 218 руб</span></li>
                                 </ul>
                             </div>
-                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ">
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 border-money-right">
                                 <h5 class="module__title-infodep-money open-sans-norm-it text-left property"><li>собственость</li></h5>
-                                <ul class="module__list-money open-sans-norm-it property-list">
+                                <ul class="module__list-money open-sans-norm-it property-list" id="list-capital">
                                     <li><span>392,4 м<span><sup>2</sup></span></span>
                                         <div class="icon-two-car"> </div>
                                         <div class="icon-two-bike"></div>
@@ -167,99 +248,85 @@
                 </div>
             </div>
             <div class="center-block text-center">
-                <div class="icon-cl fix-bnt-heros"></div>
+                <div class="icon-cl fix-bnt-heros" id="right-btn"></div>
             </div>
-           <!--  /*no hover*/ -->
-            <div class="row hidden">
-                <div class="col-xs-12  center-block module__title-infoperson open-sans-norm-it">
-                    <span class="module__title-line "></span>партия<span class="module__title-line"></span>
+                   
+               </div>
+           </div>
+           <div class="row">
+                        <div class="center-block text-center">
+                            <ul class="soc-link">
+                                <li><a href="#" class="fix-fs"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fa fa-vk"></i></a></li>
+                                <li><a href="#" class="fix-fs"><i class="fa fa-odnoklassniki"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
-                <div class="col-xs-12  center-block">
-                    <div class="module-title-big open-sans-exbolt text-center">Герои</div>
-                </div>
-                 <div class="col-xs-12  center-block module__title-infoperson open-sans-norm-it">
-                    <span class="module__title-line "></span>единая россия<span class="module__title-line"></span>
-                 </div>
-                
-                 <div class="col-xs-12  center-block text-center">
-                    <div class="module__citata open-sans-norm-it ">
-                        «Очень важно, чтобы ценностные ориентиры, любовь к Родине, патриотизм формировались с детства и были неотъемлемой частью процесса воспитания и становления гражданина»
-                    </div>
-                </div>
-                     <div class="col-xs-12  center-block text-center">
-                        <div class="module__citata-name open-sans-lite">Сергей Железняк</div>
-                              </div>
-
-             <div class="center-block text-center">
-                <div class="icon-cl fix-bnt-heros"></div>
-            </div>
-
-            </div>
-            <div class="row">
-                <div class="center-block text-center">
-                    <ul class="soc-link">
-                        <li><a href="#" class="fix-fs"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fa fa-vk"></i></a></li>
-                        <li><a href="#" class="fix-fs"><i class="fa fa-odnoklassniki"></i></a></li>
-                    </ul>
-                </div>
-            </div>
+           
+           
+       </div>
     </section>
+    
+    
     <script src="assets/js/main.js"></script>
     <script>
     /*убрать в visual */
-    $('#my-button').click(function() {
-        var win_w = $(window).width();
-        if (win_w < 768) {
-            $('#left-menu').removeClass('menu');
-            $('#left-menu').addClass('menu_smal');
-            $('#left-menu').addClass('menu-open-smal');
-        } else {
-            $('#left-menu').removeClass('menu_smal');
-            $('#left-menu').addClass('menu');
-            $('#left-menu').addClass('menu-open');
-        }
-
-    });
-
-    $('#btn_close').click(function() {
-        var win_w = $(window).width();
-        if (win_w < 768) {
-
-
-            $('#left-menu').removeClass('menu-open-smal');
-        } else {
-
-            $('#left-menu').removeClass('menu-open');
-        }
-    });
-    $(window).resize(function() {
-        $('#left-menu').removeClass('menu');
-        $('#left-menu').removeClass('menu_smal');
-        $('#left-menu').addClass('menu');
-        $('#left-menu').removeClass('menu-open-smal');
-        $('#left-menu').removeClass('menu-open');
-    });
-
-
-    $('#test1').hover(function() {
-        $('#test1_on').addClass('display-none');
-        $('#test1_hov').removeClass('display-none');
-    }, function() {
-        $('#test1_on').removeClass('display-none');
-        $('#test1_hov').addClass('display-none');
-
-    });
-    $('#test2').hover(function() {
-        $('#test2_on').addClass('display-none');
-        $('#test2_hov').removeClass('display-none');
-    }, function() {
-        $('#test2_on').removeClass('display-none');
-        $('#test2_hov').addClass('display-none');
-
-    });
+//    $('#my-button').click(function() {
+//        var win_w = $(window).width();
+//        if (win_w < 768) {
+//            $('#left-menu').removeClass('menu');
+//            $('#left-menu').addClass('menu_smal');
+//            $('#left-menu').addClass('menu-open-smal');
+//        } else {
+//            $('#left-menu').removeClass('menu_smal');
+//            $('#left-menu').addClass('menu');
+//            $('#left-menu').addClass('menu-open');
+//        }
+//
+//    });
+//
+//    $('#btn_close').click(function() {
+//        var win_w = $(window).width();
+//        if (win_w < 768) {
+//
+//
+//            $('#left-menu').removeClass('menu-open-smal');
+//        } else {
+//
+//            $('#left-menu').removeClass('menu-open');
+//        }
+//    });
+//    $(window).resize(function() {
+//        $('#left-menu').removeClass('menu');
+//        $('#left-menu').removeClass('menu_smal');
+//        $('#left-menu').addClass('menu');
+//        $('#left-menu').removeClass('menu-open-smal');
+//        $('#left-menu').removeClass('menu-open');
+//    });
+//
+//
+//    $('#test1').hover(function() {
+//        $('#test1_on').addClass('display-none');
+//        $('#test1_hov').removeClass('display-none');
+//    }, function() {
+//        $('#test1_on').removeClass('display-none');
+//        $('#test1_hov').addClass('display-none');
+//
+//    });
+//    $('#test2').hover(function() {
+//        $('#test2_on').addClass('display-none');
+//        $('#test2_hov').removeClass('display-none');
+//    }, function() {
+//        $('#test2_on').removeClass('display-none');
+//        $('#test2_hov').addClass('display-none');
+//
+//    });
+    
+//    $("#test").on('click',function(){
+//        $(".test").addClass("move");
+//    });
 
 
 

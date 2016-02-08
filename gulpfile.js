@@ -16,6 +16,7 @@ var gulp          = require('gulp'),
     concat        = require('gulp-concat'),
     stripDebug    = require('gulp-strip-debug'),
     spritesmith   = require('gulp.spritesmith'),
+    rename = require('gulp-rename'),
     reload        = browserSync.reload;
 
 
@@ -55,7 +56,8 @@ var path = {
                  'src/js/main.js',
                  'src/js/partials/_visual.js',
                  'src/js/partials/help.js',
-                 'src/js/partials/_common.js'
+                 'src/js/partials/_common.js',
+                'src/js/partials/jquery.transit.min.js'
 
               ]   ,//В стилях и скриптах нам понадобятся только main файлы
         style:   'src/style/styles.scss',
@@ -124,8 +126,10 @@ gulp.task('html:build', function () {
 gulp.task('js:build', function () {
     gulp.src(path.src.js) //Найдем наш main файл
         .pipe(concat('main.js'))
+        .pipe(gulp.dest(path.build.js))
         .pipe(stripDebug())
         .pipe(uglify())
+        .pipe(rename("main.min.js"))
         .pipe(gulp.dest(path.build.js)) //Выплюнем готовый файл в build
         .pipe(notify({
             title: 'js',
