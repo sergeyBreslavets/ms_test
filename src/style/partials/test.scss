@@ -1,5 +1,5 @@
 .module__border-fix{
-	    min-height: 900px;
+	    // min-height: 900px;
 }
 .module__title-test {
     background: url('../images/test/test-title.png') no-repeat center;
@@ -253,6 +253,15 @@
     display: inline-block;
 }
 
-body {
-    background: grey;
+.fix-bg{
+	// position: absolute;
+ 
 }
+
+.fix-b-bg{
+	  
+	background-image: url('../images/test/back-test.jpg') ;
+	background-size: cover;   
+	
+}
+

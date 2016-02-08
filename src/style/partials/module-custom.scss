@@ -235,6 +235,9 @@
     a {
         color: #fff;
         text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+        }
     }
     .menu__nav-title {
         font-size: 11px;
@@ -272,6 +275,9 @@
             height: 20px;
             background: #000;
             border: 1px solid #fff;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 10px;
         }
         .input-group-addon {
             background: #000;
@@ -281,6 +287,14 @@
             i {
                 color: #fff;
                 font-size: 10px;
+                    padding-bottom: 3px;
+
+            }
+            &:hover{
+                background: #fff;
+                i{
+                color: #000;
+            }
             }
         }
     }
@@ -863,11 +877,14 @@
 .fix-fs{
 
     padding: 4px;
-    padding-left: 7px !important;
-    padding-right: 7px !important;
+    padding-left: 9px!important;
+    padding-right: 7px!important;
 
 }
-
+.fix-tw{
+    padding-left: 6px !important;
+    padding-right: 6px !important; 
+}
 
 /*no-hover*/
 .module-title-big{
