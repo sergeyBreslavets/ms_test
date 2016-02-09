@@ -29,7 +29,7 @@ $(".modile__infoDep-like-but").on(MOUSE_DOWN,function(){
 
 $(".module__tringl_edros").on(MOUSE_DOWN,function(){
     if ($(window).width() <= '768'){
-        $('#wrap-map').transition({x:'-33%'}, 500);
+        $('#wrap-map').transition({x:'-33.3333%'}, 500);
         $('#center-party-box').fadeIn();
         $('.wrap-map-bg').fadeIn();
     } else {
@@ -39,19 +39,21 @@ $(".module__tringl_edros").on(MOUSE_DOWN,function(){
     
 });
 
-$("#center-party-box .btn-back").on(MOUSE_DOWN,function(){
+$("#center-party-box .btn-close").on(MOUSE_DOWN,function(){
     $('#wrap-map').transition({x:'0'}, 500);
     $('.wrap-map-bg').fadeOut();
 });
 
 $("#right-chang-box .btn-back").on(MOUSE_DOWN,function(){
-    $('#wrap-map').transition({x:'-33%'}, 500);
+    $('#wrap-map').transition({x:'-33.3333%'}, 500);
 });
 
 $(".module__list_party li").on(MOUSE_DOWN,function(){
+    var text = $(this).text();
     if ($(window).width() <= '768'){
-        $('#wrap-map').transition({x:'-66%'}, 500);
+        $('#wrap-map').transition({x:'-66.6666%'}, 500);
         $('#right-chang-box').fadeIn();
+        $('#select-name').text(text);
     } else {
         $('#right-chang-box').fadeIn();
     }
@@ -180,7 +182,14 @@ function changeHero(i){
 changeHero(1);
 
 
+var partyArray = [{party:'единая россия',procent:'46,6'},
+                  {party:'справедливая россия',procent:'10'},
+                  {party:'кпрф',procent:'12'},
+                  {party:'лдпр',procent:'15'}];
 
+for (i = 0; i < partyArray.length; i++){
+    $("#party"+i).text(partyArray[i].party);
+}
 
 $('#my-button').click(function() {
         var win_w = $(window).width();

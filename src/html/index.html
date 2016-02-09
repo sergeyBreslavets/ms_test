@@ -11,7 +11,7 @@
 <body>
     <section class="module" data-background="assets/images/background.jpg">
         <div class="container">
-            <div class="row">
+            <div class="row border-row">
                <div class="wrap-map-bg"></div>
                 <div class="col-xs-12 col-sm-12  col-md-12  col-lg-12  module__border ">
                    
@@ -49,10 +49,10 @@
 
                             <div class="module__map">
                                 
-                                <div class="module__tringl_kprf"><span class="open-sans-exboltit">кпрф</span></div>
-                                <div class="module__tringl_ldpr"><span class="open-sans-exboltit">лдпр</span></div>
-                                <div class="module__tringl_sprross"><span class="open-sans-exboltit">справедливая россия</span></div>
-                                <div class="module__tringl_edros"><span class="open-sans-exboltit">единая россия</span><span class="procent text-right open-sans-regular">46,6<div class="bot-proc">%</div></span></div>
+                                <div class="module__tringl_kprf"><span class="open-sans-exboltit" id="party2"></span></div>
+                                <div class="module__tringl_ldpr"><span class="open-sans-exboltit" id="party3"></span></div>
+                                <div class="module__tringl_sprross"><span class="open-sans-exboltit" id="party1"></span></div>
+                                <div class="module__tringl_edros"><span class="open-sans-exboltit" id="party0"></span><span class="procent text-right open-sans-regular">46,6<div class="bot-proc">%</div></span></div>
                                 
                             </div>
                             
@@ -79,15 +79,19 @@
                                 <li>Панина Елена Владимировна</li>
                                 <li>Ресин Владимир Иосифович</li>
                             </ul>
-                            <div class="btn-back"><div id="btn-party" class="open-sans-exboltit">единая россия</div></div>
+                            <div class="btn-close"></div>
+                            <div id="btn-party" class="open-sans-exboltit">единая россия</div>
                         </div>
                         <div id="right-chang-box" class="col-xs-4 modile__rel">
 <!--                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 modile__rel hidden-xs hidden-sm">-->
+                           <div class="modile__infoDep-partyname open-sans-lite" id="select-name"></div>
                             <div class="modile__infoDep">
 <!--                                <div class="module__infoDep-place"><span class="open-sans-lite">25</span></div>-->
 <!--                                <div class="module__infoDep-text"> - место в Рейтинге (из 450 депутатов)</div>-->
                                     
                                 <img class="modile__infoDep-photo" id="people-photo" src="assets/images/face_kozevnikova.jpg" alt=""> 
+                                <div class="modile__infoDep-diline"></div>
+                                
                                 <div class="modile__infoDep-change">
                                    <img class="modile__infoDep-photo" src="" alt="">    
                                     <div class="modile__infoDep-line"></div>
