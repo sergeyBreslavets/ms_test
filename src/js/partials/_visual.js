@@ -3,10 +3,10 @@ var mouse_down = "click";
 var time = 500;
 
 var transitions_av = true;
-var min_window_h = 650;
+var min_window_h = 960;
 var navbar = $('.navbar-custom'),
 	navHeight   = navbar.height(),
-    modules = $('.module---hero, .module, .module---small'),
+    modules = $('.module '),
     windowWidth = Math.max($(window).width(), window.innerWidth),
     navbatTrans;
 var visual = {
@@ -76,11 +76,16 @@ var visual = {
 			/* ---------------------------------------------- */
             if ($(this).hasClass('module--full-height')) {
                 if ($(window).height() > min_window_h) {
-                    $(this).height($(window).height() );
+       
+                 $(this).css('height', $(window).height());  
+                   
                 } else {
                     $(this).height(min_window_h );
                 }
             }
+           
+          
+
              /* ---------------------------------------------- /*
 			 * Set parallax module
 			/* ---------------------------------------------- */
@@ -101,22 +106,7 @@ var visual = {
     },
 
     moduleResize: function() {
-        modules.each(function() {
-            if ($(this).hasClass('module--hero')) {
-                if ($(window).height() > min_window_h) {
-                    $(this).height($(window).height() *0.6);
-                } else {
-                    $(this).height(min_window_h *0.6);
-                }
-            }
-            if ($(this).hasClass('module--full-height')) {
-                if ($(window).height() > min_window_h) {
-                    $(this).height($(window).height() - 120);
-                } else {
-                    $(this).height(min_window_h - 120);
-                }
-            }
-        });
+        visual.moduleInit(); 
 
     },
     initColorNavbar:function(navbar){

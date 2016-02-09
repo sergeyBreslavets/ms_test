@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <section class="module" data-background="assets/images/background.jpg">
+    <section class="module module--full-height" data-background="assets/images/background.jpg">
         <div class="container">
             <div class="row border-row">
                <div class="wrap-map-bg"></div>
@@ -284,6 +284,23 @@
     <script src="assets/js/main.js"></script>
     <script>
     /*убрать в visual */
+
+
+
+
+      var h_win = $(window).height();
+       $('.bg--full').css('height', h_win);
+    
+
+     $(window).resize(function() {
+       var h_win = $(window).height();
+       $('.bg--full').css('height', h_win);
+
+
+
+        });
+
+
 //    $('#my-button').click(function() {
 //        var win_w = $(window).width();
 //        if (win_w < 768) {
