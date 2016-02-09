@@ -2,6 +2,7 @@
     text-align: center;
     border: 2px solid #fff;
     margin-top: 50px;
+    padding-bottom: 50px;
 }
 
 .module__part-title {
@@ -16,7 +17,7 @@
 }
 
 .module__card {
-    
+    cursor: move;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     
     text-align: center;
