@@ -51,6 +51,7 @@ var path = {
                  'bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js',
                  'bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js',
                  'bower_components/pushy/js/pushy.js',
+                 'bower_components/jquery-ui/jquery-ui.js', 
         
                   'src/js/partials/hoverable_and_touchable.js',
                  'src/js/main.js',
