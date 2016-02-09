@@ -1,3 +1,7 @@
+.border-row.row{
+    margin-left: -5px;
+    margin-right: -5px;
+}
 .module {
     // background: url('../images/background.jpg') no-repeat top left;
     // min-height: 1000px;
@@ -323,7 +327,7 @@
 }
 
 .modile__infoDep {
-    position: relative;
+    position: absolute;
     margin-top: 127px;
 }
 
@@ -403,8 +407,17 @@
 .modile__infoDep-photo {
     width: 135px;
     height: 64px;
+    position: relative;
 }
-
+.modile__infoDep-diline{
+    display: block;
+    position: absolute;
+    width: 102px;
+    height: 172px;
+    top: 64px;
+    left: -30px;
+    background: url('../images/diline.png');
+}
 .modile__infoDep-line {
     background: url('../images/photo-line.png');
     margin-top: -145px;
@@ -552,12 +565,43 @@
     left: 20px;
     width: 40px;
     height: 40px;
-    #btn-party {
-        display: block;
-        position: absolute;
-        top: 50px;
-        left: 0px;
-    }
+    
+}
+.btn-close{
+    background: url('../images/burger_2.png') center no-repeat;
+    padding-left: 20px;
+    color: #fff;
+    font-size: 14px;
+    display: none;
+    text-transform: uppercase;
+    position: absolute;
+    top: -200px;
+    right: 40px;
+    width: 22px;
+    height: 21px;
+
+}
+#btn-party {
+    display: none;
+    position: absolute;
+    top: -200px;
+    left: 30px;
+    text-transform: uppercase;
+    width: 100px;
+    color: #fff;
+}
+
+.modile__infoDep-partyname{
+    color: #fff;
+    font-size: 16px;
+    list-style: none;
+    text-transform: uppercase;
+    text-decoration: line-through;
+    position: absolute;
+    display: none;
+    text-align: center;
+    width: 100%;
+    top: 270px;
 }
 
 @media (min-width: $screen-lg-min) {
@@ -632,6 +676,11 @@
             .btn-back {
                 display: block;
             }
+            .btn-close {
+                display: block;
+            }
+            #btn-party{display: block;}
+            .modile__infoDep-partyname{display: block;}
         }
     }
     .module__title {
@@ -676,6 +725,11 @@
     }
     .modile__infoDep {
         margin-top: -50px;
+        left: 50%;
+//        -webkit-transform: scale(0.8);
+//        -moz-transform: scale(0.8);
+        width: 330px;
+        margin-left: -165px;
     }
     .module__tringl_edros span {
         max-width: 100px;
@@ -750,6 +804,7 @@
 
 #right-chang-box {
     display: none;
+    position: relative;
 }
 
 
