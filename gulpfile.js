@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp          = require('gulp'),
+    pkg = require('./package.json'),
     watch         = require('gulp-watch'),
     prefixer      = require('gulp-autoprefixer'),
     uglify        = require('gulp-uglify'),
@@ -19,7 +20,9 @@ var gulp          = require('gulp'),
     rename = require('gulp-rename'),
     reload        = browserSync.reload;
 
-
+var version     = pkg.version;
+var name        = pkg.name;
+var browsers    = pkg.browsers;
 
 var path = {
     build: { //Тут мы укажем куда складывать готовые после сборки файлы
@@ -126,11 +129,11 @@ gulp.task('html:build', function () {
 
 gulp.task('js:build', function () {
     gulp.src(path.src.js) //Найдем наш main файл
-        .pipe(concat('main.js'))
+        .pipe(concat(name+'.js'))
         .pipe(gulp.dest(path.build.js))
         .pipe(stripDebug())
         .pipe(uglify())
-        .pipe(rename("main.min.js"))
+        .pipe(rename(name+".min.js"))
         .pipe(gulp.dest(path.build.js)) //Выплюнем готовый файл в build
         .pipe(notify({
             title: 'js',
@@ -145,8 +148,11 @@ gulp.task('style:build', function () {
         .pipe(sourcemaps.init()) //То же самое что и с js
         .pipe(sass().on('error', sass.logError))//Скомпилируем
         .pipe(prefixer()) //Добавим вендорные префиксы
+        .pipe(rename(name+'.css'))
+        .pipe(gulp.dest(path.build.css))
         .pipe(cssmin()) //Сожмем
         .pipe(sourcemaps.write())
+        .pipe(rename(name+'.min.css'))
         .pipe(gulp.dest(path.build.css)) //И в build
         .pipe(notify({
             title: 'sass',
@@ -240,5 +246,5 @@ gulp.task('clean', function (cb) {
 gulp.task('default', [
           'build', 
           // 'webserver',  --нужно сконфигурировать 
-          'watch'
+          //'watch'
 ]);
