@@ -4,6 +4,7 @@
     margin-top: 50px;
     padding-bottom: 50px;
     min-height: 200px;
+
 }
 
 .module__part-title {
@@ -30,7 +31,7 @@
     min-height: 240px;
    
     &__img {
-        width: 250px;
+        width: 100%
         
     }
     &__text {
@@ -72,6 +73,7 @@
     }
 }
 .module__part-box{
+    margin-top: 10px;
     min-height: 30px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -81,4 +83,21 @@
 .custom_row-part{
     margin-right: 5px;
     margin-left: 5px;
+}
+.btn_solution {
+    font-size: 30px;
+    color: #fff;
+    border: 2px solid #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: -webkit-inline-box;
+    margin-top: 30px;
+    &:hover{
+        text-decoration: none;
+        color: #000;
+    }
 }
