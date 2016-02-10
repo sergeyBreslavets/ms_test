@@ -3,7 +3,7 @@ var mouse_down = "click";
 var time = 500;
 
 var transitions_av = true;
-var min_window_h = 960;
+var min_window_h = 1100;
 var navbar = $('.navbar-custom'),
 	navHeight   = navbar.height(),
     modules = $('.module '),

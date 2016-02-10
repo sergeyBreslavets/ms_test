@@ -55,13 +55,14 @@ var path = {
                  'bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js',
                  'bower_components/pushy/js/pushy.js',
                  'bower_components/jquery-ui/jquery-ui.js', 
+                 'bower_components/jquery.transit/jquery.transit.js', 
         
                   'src/js/partials/hoverable_and_touchable.js',
                  'src/js/main.js',
                  'src/js/partials/_visual.js',
                  'src/js/partials/help.js',
                  'src/js/partials/_common.js',
-                'src/js/partials/jquery.transit.min.js'
+                // 'src/js/partials/jquery.transit.min.js'
 
               ]   ,//В стилях и скриптах нам понадобятся только main файлы
         style:   'src/style/styles.scss',

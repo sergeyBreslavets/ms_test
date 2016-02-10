@@ -21,6 +21,8 @@
     "bootstrap-sass": "~3.3.6",
     "components-font-awesome": "~4.5.0",
     "jquery-ui": "~1.11.4",
-    "pushy": "~0.9.2"
+    "jquery.transit": "~0.9.12",
+    "pushy": "~0.9.2",
+    "transit": "~0.3.0"
   }
 }
