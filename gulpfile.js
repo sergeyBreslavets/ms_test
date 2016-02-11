@@ -59,9 +59,11 @@ var path = {
         
                   'src/js/partials/hoverable_and_touchable.js',
                  'src/js/main.js',
+
                 'src/js/canvasTriangles.js',
                  'src/js/partials/_visual.js',
                  'src/js/partials/help.js',
+                 'src/js/partials/test3.js',
                  'src/js/partials/_common.js',
                 // 'src/js/partials/jquery.transit.min.js'
 
