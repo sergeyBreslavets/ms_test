@@ -40,7 +40,7 @@
                                                                 Выбор за тобой!</span>
                         </div>
                     </div>
-                    <div class="row custom-pd pt-20 hidden-xs hidden-sm">
+                    <div class="row custom-pd pt-20 hidden-xs hidden-sm" id="allpart">
                         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 ">
                             <div class="module__part ">
                                 <h4 class="module__part-title open-sans-lite  ">единая россия</h4> <img class="module__part__logo" src="assets/images/logopart/edin_ros.png" alt="">
@@ -185,7 +185,7 @@
                             справедливая россия
                         </div>
                         <a href="#" id="btn_next-part" class="btn_on_help_scr open-sans-exbolt">назад</a>
-                      
+                         
                     </div>
                       
                         <div class="hover_scr_on_mob-left " id="part_scr_solutio">
@@ -403,9 +403,7 @@
                 }
             }
         }
-          
 
-               
           function endSolution(){
            var sobid =['sob_1', 'sob_2','sob_3','sob_4', 'sob_5', 'sob_6','sob_7','sob_8','sob_9','sob_10','sob_11','sob_12'];
            for (var i = 0; i < sobid.length; i++) {
@@ -413,24 +411,35 @@
                     return false;
                   }
             }; 
-            
             $('#part_scr_solutio').addClass('hover_scr_on_mob-left-on'); 
             return true;
           }
-           
 
 
-
-
-
-         //  $(window).scroll(function() {  
-
-         // var top = $(document.getElementById(nowid)).offset().top;  
-         //   $('#part_scr').css({"padding-top": top+"px" });
-         //   console.log( top);   
-         
-         //  });
-
+           /* fix for ipad */
+           if (mobile === true) {
+               $('#allpart').addClass('hidden');
+           }
+            /*
+             ed_ros =1 
+             ldpr =2
+             kprf =3
+             sp_ros =4 
+            */
+           function getidInPart(nomer_part) {
+           var sobid =['sob_1', 'sob_2','sob_3','sob_4', 'sob_5', 'sob_6','sob_7','sob_8','sob_9','sob_10','sob_11','sob_12'];
+           var idMas =[];     
+                for (var i = 0; i < sobid.length; i++) {
+                    if (getattrpart(sobid[i]) === nomer_part) {
+                      idMas.push(sobid[i]);
+                    } ;
+                   
+                }
+                return idMas;
+           } 
+           $('#solut_mob').click(function(){
+              console.log(getidInPart('1'));
+           });
     });
     </script>
 </body>

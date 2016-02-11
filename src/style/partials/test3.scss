@@ -23,6 +23,7 @@
 }
 
 .module__card {
+    margin-top: 10px;
     position: relative;
     cursor: move;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -112,7 +113,7 @@
 /*mob test3*/
 
 .hover_scr_on_mob{
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     background: #000;
@@ -128,7 +129,7 @@
         color: #fff;
         padding-right: 10px;
         padding-left: 10px;
-        margin-top: 50px;
+        margin-top: 150px;
     } 
 }
 
@@ -148,6 +149,10 @@
     text-decoration: none;
     color: #fff;
    }
+   &:focus{
+    text-decoration: none;
+    color: #fff;
+   }
 }
 .hover_scr_on_mob-no{
     visibility: hidden;
@@ -161,7 +166,7 @@
 }
 
 .hover_scr_on_mob-left{
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     background: #000;
