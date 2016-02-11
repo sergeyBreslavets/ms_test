@@ -185,7 +185,15 @@
                             справедливая россия
                         </div>
                         <a href="#" id="btn_next-part" class="btn_on_help_scr open-sans-exbolt">назад</a>
+                      
                     </div>
+                      
+                        <div class="hover_scr_on_mob-left " id="part_scr_solutio">
+                        <a href="#" id="solut_mob" class="btn_on_help_scr open-sans-exbolt " >принять решение</a>
+                        <a href="#" id="btn_back_solution" class="btn_on_help_scr open-sans-exbolt">назад</a>
+                        </div>
+
+
                 </div>
             </div>
         </div>
@@ -308,14 +316,12 @@
                 $('#part_scr').removeClass('hover_scr_on_mob-left-on');
             }
         });
+           $('#btn_back_solution').click(function() {
+            if (mobile === true) {
+                $('#part_scr_solutio').removeClass('hover_scr_on_mob-left-on');
+            }
+        });
 
-        // sob_1
-        // sob_2
-
-
-        // .choice_part
-        //  .choice_part-name
-        // .choice_part__bnt_cansel
 
         $('#sob_1').click(function() { chosesobie('sob_1'); });
         $('#sob_2').click(function() { chosesobie('sob_2'); });
@@ -360,6 +366,7 @@
         function addhovertocard(idcard, name_part, attr_part) {
             var sob = document.getElementById(idcard);
             $(sob).find('.module__card').append("<div class='choice_part' part=" + attr_part + "><div class='choice_part-name open-sans-exboltit'>" + name_part + "</div><div class='choice_part__bnt_cansel open-sans-exboltit'>отменить</div></div>");
+            console.log(endSolution());  
         }
 
         function removehovercard(idcard) {
@@ -382,26 +389,47 @@
         }
 
         function chosesobie(idcard) {
+
+
            nowid = idcard;
+           // var top = $(document.getElementById(nowid)).offset().top;  
+           // $('#part_scr').css({"padding-top": top*1.6+"px" });
             if (mobile === true) {
                 if (hashoveriinid(nowid) === true) {
                     removehovercard(nowid);
                 } else {
-                    $('#part_scr').addClass('hover_scr_on_mob-left-on');
+                    $('#part_scr').addClass('hover_scr_on_mob-left-on'); 
                     
                 }
             }
         }
+          
 
                
-         function makecenterpart(){
+          function endSolution(){
+           var sobid =['sob_1', 'sob_2','sob_3','sob_4', 'sob_5', 'sob_6','sob_7','sob_8','sob_9','sob_10','sob_11','sob_12'];
+           for (var i = 0; i < sobid.length; i++) {
+                  if (hashoveriinid(sobid[i]) === false) {
+                    return false;
+                  }
+            }; 
+            
+            $('#part_scr_solutio').addClass('hover_scr_on_mob-left-on'); 
+            return true;
+          }
+           
 
 
-        }
 
-          // $(window).scroll(function() {
-          // console.log( $(window).h );
-    // })
+
+
+         //  $(window).scroll(function() {  
+
+         // var top = $(document.getElementById(nowid)).offset().top;  
+         //   $('#part_scr').css({"padding-top": top+"px" });
+         //   console.log( top);   
+         
+         //  });
 
     });
     </script>
