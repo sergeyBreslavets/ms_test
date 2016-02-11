@@ -23,6 +23,7 @@
 }
 
 .module__card {
+    position: relative;
     cursor: move;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     
@@ -32,7 +33,7 @@
     padding-left: 15px;
     padding-top: 15px;
     margin-top: 20px;
-    min-height: 240px;
+    min-height: 270px;
    
     &__img {
         width: 100%
@@ -141,6 +142,8 @@
    padding-left: 15px;
    padding-top: 10px;
    padding-bottom: 10px;
+   text-transform: uppercase;
+   text-decoration: none;
    &:hover{
     text-decoration: none;
     color: #fff;
@@ -155,4 +158,84 @@
     transition: all 1s;
     opacity: 0;
     z-index: 50;
+}
+
+.hover_scr_on_mob-left{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    right: 100%;
+    top: 0px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 2s;
+    text-align: center;
+
+    &__text{
+        font-size: 20px;
+        text-transform: uppercase;
+        color: #fff;
+        padding-right: 10px;
+        padding-left: 10px;
+        margin-top: 50px;
+    } 
+}
+.hover_scr_on_mob-left-on{
+      visibility: visible;
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+    transition: all 1s;
+    opacity: 0.8;
+    z-index: 50;
+}
+
+.hover_scr_on_mob-left__partia{
+   border: 2px solid #fff;
+   color: #fff;
+   margin-top: 10px;
+   padding-right: 15px;
+   padding-left: 15px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   text-transform: uppercase;
+   margin-left: 15px;
+   margin-right: 15px;
+
+   &:hover{
+    text-decoration: none;
+    color: #fff;
+   } 
+}
+
+.choice_part{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    background: #000;
+    top: 0px;
+    left: 0px;
+    .choice_part-name{
+        font-size: 20px;
+        margin-top: 70px;
+        color: #fff;
+        text-transform: uppercase;
+
+    }
+    .choice_part__bnt_cansel{
+         color: #fff;
+         border: 2px dashed #fff;
+         font-size: 20px;
+         margin-top: 20px;
+         padding-left: 15px;
+         padding-right: 15px;
+         padding-bottom: 10px;
+         padding-top: 10px;
+         margin-right: 15px;
+         margin-left: 15px;
+
+    }
 }
