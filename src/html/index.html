@@ -8,8 +8,8 @@
     <link rel="stylesheet" type="text/css" href="assets/css/duma.css">
 </head>
 
-<body>
-    <section class="module module--full-height" data-background="assets/images/background.jpg">
+<body onload="init();">
+    <section class="module" data-background="assets/images/background.jpg">
         <div class="container">
             <div class="row border-row">
                <div class="wrap-map-bg"></div>
@@ -52,7 +52,9 @@
                                 <div class="module__tringl_kprf"><span class="open-sans-exboltit" id="party2"></span></div>
                                 <div class="module__tringl_ldpr"><span class="open-sans-exboltit" id="party3"></span></div>
                                 <div class="module__tringl_sprross"><span class="open-sans-exboltit" id="party1"></span></div>
-                                <div class="module__tringl_edros"><span class="open-sans-exboltit" id="party0"></span><span class="procent text-right open-sans-regular">46,6<div class="bot-proc">%</div></span></div>
+                                <div class="module__tringl_edros"><span class="open-sans-exboltit" id="party0"></span><span id="procent" class="text-right open-sans-regular"></span></div>
+                               <canvas id="canvas" width="362" height="434" ></canvas>
+                               <div id="message"></div>
                                 
                             </div>
                             
@@ -62,7 +64,7 @@
                         <div id="center-party-box" class="col-xs-4  col-md-3 col-lg-4">
                         
 <!--                            <h4 class="module__title-party open-sans-exboltit">Единая россия</h4>-->
-                            <ul class="module__list_party open-sans-lite">
+                            <ul class="module__list_party open-sans-lite" id="party_list">
                                 <li>Антошкин Николай Тимофеевич</li>
                                 <li>Белых Ирина Викторовна</li>
                                 <li>Волков Данил Владимирович</li>

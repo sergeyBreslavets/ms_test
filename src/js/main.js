@@ -35,9 +35,19 @@ $(".module__tringl_edros").on(MOUSE_DOWN,function(){
     } else {
         $('#center-party-box').fadeIn();
     }
-//    
+  
     
 });
+
+function showList(){
+    if ($(window).width() <= '768'){
+        $('#wrap-map').transition({x:'-33.3333%'}, 500);
+        $('#center-party-box').fadeIn();
+        $('.wrap-map-bg').fadeIn();
+    } else {
+        $('#center-party-box').fadeIn();
+    }
+}
 
 $("#center-party-box .btn-close").on(MOUSE_DOWN,function(){
     $('#wrap-map').transition({x:'0'}, 500);
@@ -48,7 +58,7 @@ $("#right-chang-box .btn-back").on(MOUSE_DOWN,function(){
     $('#wrap-map').transition({x:'-33.3333%'}, 500);
 });
 
-$(".module__list_party li").on(MOUSE_DOWN,function(){
+$("#party_list li").on(MOUSE_DOWN,function(){
     var text = $(this).text();
     if ($(window).width() <= '768'){
         $('#wrap-map').transition({x:'-66.6666%'}, 500);
@@ -57,14 +67,20 @@ $(".module__list_party li").on(MOUSE_DOWN,function(){
     } else {
         $('#right-chang-box').fadeIn();
     }
-//      
-    
+    console.log(text);
+  
 });
 
 //$("#right-btn").on(MOUSE_DOWN,function(){
 //    $('#wrap').transition({x:'0'}, 500);
 //    $("#heros-bg").fadeOut();
 //});
+
+function closeAll(){
+    $('#right-chang-box').fadeOut();
+//    $('#center-party-box').fadeOut();
+}
+
 
 var obj = {};
 
@@ -182,13 +198,84 @@ function changeHero(i){
 changeHero(1);
 
 
-var partyArray = [{party:'единая россия',procent:'46,6'},
-                  {party:'справедливая россия',procent:'10'},
-                  {party:'кпрф',procent:'12'},
-                  {party:'лдпр',procent:'15'}];
+var partyArray = [{party:'единая россия',procent:'46,6',list:['Антошкин Николай Тимофеевич','Белых Ирина Викторовна','Волков Данил Владимирович','Выборный Анатолий Борисович','Гончар Николай Николаевич','Жарков Антон Викторович','Железняк Сергей Владимирович','Звагельский Виктор Фридрихович','Исаев Андрей Константинович','Кожевникова Мария Александровна','Крупенников Владимир Александрович','Кузин Сергей Павлович','Никонов Вячеслав Алексеевич','Панина Елена Владимировна','Ресин Владимир Иосифович']},
+                  {party:'справедливая россия',procent:'10',list:['Волков Данил Владимирович','Выборный Анатолий Борисович','Гончар Николай Николаевич','Жарков Антон Викторович','Железняк Сергей Владимирович','Звагельский Виктор Фридрихович','Исаев Андрей Константинович','Кожевникова Мария Александровна','Крупенников Владимир Александрович','Кузин Сергей Павлович','Никонов Вячеслав Алексеевич','Панина Елена Владимировна','Ресин Владимир Иосифович']},
+                  {party:'кпрф',procent:'12',list:['Антошкин Николай Тимофеевич','Белых Ирина Викторовна','Волков Данил Владимирович','Выборный Анатолий Борисович','Гончар Николай Николаевич','Жарков Антон Викторович']},
+                  {party:'лдпр',procent:'15',list:['Антошкин Николай Тимофеевич','Белых Ирина Викторовна','Волков Данил Владимирович','Выборный Анатолий Борисович','Гончар Николай Николаевич','Жарков Антон Викторович','Железняк Сергей Владимирович','Звагельский Виктор Фридрихович','Исаев Андрей Константинович','Кожевникова Мария Александровна','Крупенников Владимир Александрович','Кузин Сергей Павлович','Никонов Вячеслав Алексеевич','Панина Елена Владимировна','Ресин Владимир Иосифович']}];
 
 for (i = 0; i < partyArray.length; i++){
     $("#party"+i).text(partyArray[i].party);
+    $("#party"+i).attr('data-val',i);
+}
+
+$('#procent').text(partyArray[0].procent);
+//против часовой
+//function changeTrianglesData(){
+//    for (i = 0; i < partyArray.length; i++){
+//        var k = $("#party"+i).attr('data-val');
+//        k = parseInt(k);
+//        console.log(typeof(k));
+//        k = k + 1;
+//        
+//        console.log(k);
+//        if ( k > 3 ){
+//            k = k - 4;
+//            $("#party"+i).text(partyArray[k].party);
+//            $("#party"+i).attr('data-val',k);
+//        } else {
+//            $("#party"+i).text(partyArray[k].party);
+//            $("#party"+i).attr('data-val',k);
+//        }
+//    }
+//}
+
+function createLi(e){
+    var htmlLi = '';
+    for (n = 0; n < partyArray[e].list.length;n++){
+        htmlLi += '<li data-id="'+ n +'">' + partyArray[e].list[n] + '</li>';
+    }
+    $('#party_list').html(htmlLi);
+    $("#party_list li").on(MOUSE_DOWN,function(){
+        var topVal = $(this).position().top;
+        var text = $(this).text();
+        if ($(window).width() <= '768'){
+            $('#wrap-map').transition({x:'-66.6666%'}, 500);
+            $('#right-chang-box').fadeIn();
+            $('#select-name').text(text);
+        } else {
+            $('#right-chang-box').fadeIn();
+            topVal = topVal - 240;
+            $('.modile__infoDep').transition({y:topVal},500);
+        }
+    });
+}
+createLi(0);
+//по часовой
+function changeTrianglesData(){
+    $('#procent').fadeOut();
+//    $('#center-party-box').fadeOut();
+    for (i = partyArray.length -1; i >= 0; i--){
+        var k = $("#party"+i).attr('data-val');
+        k = parseInt(k);
+        console.log(k);
+        k = k - 1;
+        
+        console.log(k);
+        if ( k < 0 ){
+            k = k + 4;
+            $("#party"+i).text(partyArray[k].party);
+            $("#party"+i).attr('data-val',k);
+        } else {
+            $("#party"+i).text(partyArray[k].party);
+            $("#party"+i).attr('data-val',k);
+        }
+        
+    }
+    var valProc = $("#party0").attr('data-val');
+    valProc = parseInt(valProc);
+    $('#procent').delay(300).text(partyArray[valProc].procent).fadeIn();
+    createLi(valProc);
+    
 }
 
 $('#my-button').click(function() {
@@ -244,81 +331,7 @@ $('#my-button').click(function() {
 
 
 
-//$.ajax({
-//                url: 'data.json',
-//                type: 'GET',
-//                dataType: 'json',
-//                beforeSend: function() {console.log("before");},  
-//                complete: function() {console.log("work");},
-//                success: function(obj) {
-//                    
-//                }});
 
-//$.ajax({
-//                url: url,
-//                type: 'POST',
-//                data: data,
-//                dataType: 'json',
-//                beforeSend: function() {},  
-//                complete: function() {},
-//                success: function(obj) {
-//                    console.log(obj);
-//                    //очищаем контент в форме 
-//                    var html = '';
-//                    var info_html = '';
-//                    if(obj.success){
-//                      html += '<h3>'+ obj.place_info.title +'</h3>';
-//                      if(obj.place_image){
-//                        html += '<div id="myMapCarousel" class="carousel slide col-lg-5 col-md-12" data-ride="carousel">';
-//                        html += '<div class="carousel-inner" role="listbox">';
-//                        html += '<div class="item active">';
-//                        html += '<img src="'+obj.place_image+'" alt="">';
-//                        html += '</div>';
-//                        html += '</div>';
-//                        html += '</div>';
-//                        html += '<div class="col-lg-7  col-md-12">';
-//                        html += obj.place_info.description;
-//                        html += '</div>';
-//
-//                      }else{
-//                        html += '<div class="col-lg-12  col-md-12">';
-//                        html += obj.place_info.description;
-//                        html += '</div>';
-//                      }
-//                      console.log(html);
-//                      $('.map-popup-content').empty().html(html);
-//                      
-//                      info_html += '<div class="map-popup-info-center">';
-//                      console.log('place_period' + obj.place_info.place_period);
-//                      info_html += '<div class="popup-time">';
-//                       if(obj.place_info.place_period){
-//                        info_html += 'график работы<span>'+ obj.place_info.place_period + ' ' + obj.place_info.place_time+ '</span>';
-//                      }
-//                      info_html += '</div>';
-//                      if(obj.place_info.address){
-//                        info_html  += '<div class="popup-adress">адрес<span>Москва,'+ obj.place_info.address +'</span></div>';
-//                      }
-//                      if(obj.place_info.place_phone){
-//                        info_html  += '<div class="popup-hotline">горячая линия<span>'+ obj.place_info.place_phone +'</span></div>';
-//                      }
-//                      
-//                      info_html  += '</div>';
-//                       if( parseInt(obj.place_info.type_id) == 17){
-//                        info_html  += '<a href="https://pgu.mos.ru/ru/services/link/1056" target="_blank" class="how">как стать участником?</a>';
-//                      }
-//                      
-//                      $('.map-popup-info').empty().html(info_html);
-//                      
-//                      $('#mapModal').modal('show');
-//                        mapModal();
-//                    }else{
-//                       console.log('не удалось расшарить');
-//                    }
-//                },
-//                error: function(xhr, ajaxOptions, thrownError) {
-//                    console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText  + "\r\n" +xhr);
-//                } 
-//            });
 
 
 

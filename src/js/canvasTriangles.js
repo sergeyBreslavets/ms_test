@@ -5,9 +5,12 @@ function init(){
 	if  ("ontouchstart" in window || window.DocumentTouch && document instanceof DocumentTouch) {
 		MOUSE_UP = "touchend";
 	}
-	toy.play();
+//	toy.play();
 	$("#canvas").on(MOUSE_UP, function(){
 		toy.play();
+        changeTrianglesData();
+        closeAll();
+        showList();
 	});
 	
 	function complete(){
