@@ -107,7 +107,7 @@
             top: 250px;
             width: 329px;
             height: 235px;
-            background: url("../images/tringl_edros.png");
+//            background: url("../images/tringl_edros.png");
             cursor: pointer;
             span {
                 color: #fff;
@@ -115,22 +115,17 @@
                 letter-spacing: 3px;
                 text-transform: uppercase;
                 position: absolute;
-                top: 0px;
-                right: -290px;
+                bottom: 185px;
+                left: 350px;
             }
-            .procent {
+            #procent {
                 font-size: 52px;
                 letter-spacing: 3px;
                 text-transform: uppercase;
                 position: absolute;
                 top: 70px;
                 right: 60px;
-                .bot-proc {
-                    display: block;
-                    right: 0;
-                    margin-top: -10px;
-                    font-size: 18px;
-                }
+                left: 0;
             }
         }
         &_kprf {
@@ -139,14 +134,14 @@
             top: 101px;
             width: 192px;
             height: 237px;
-            background: url("../images/tringl_kprf.png");
+//            background: url("../images/tringl_kprf.png");
             span {
                 color: #fff;
                 font-size: 28px;
                 letter-spacing: 3px;
                 text-transform: uppercase;
                 position: absolute;
-                top: -40px;
+                bottom: 240px;
                 left: 50px;
             }
         }
@@ -156,15 +151,15 @@
             top: 207px;
             width: 146px;
             height: 176px;
-            background: url("../images/tringl_ldpr.png");
+//            background: url("../images/tringl_ldpr.png");
             span {
                 color: #fff;
                 font-size: 28px;
                 letter-spacing: 3px;
                 text-transform: uppercase;
                 position: absolute;
-                top: -40px;
-                left: 60px;
+                bottom: 180px;
+                left: 100px;
             }
         }
         &_sprross {
@@ -173,7 +168,7 @@
             top: 256px;
             width: 84px;
             height: 279px;
-            background: url("../images/tringl_sprross.png");
+//            background: url("../images/tringl_sprross.png");
             span {
                 color: #fff;
                 font-size: 28px;
@@ -181,8 +176,9 @@
                 text-transform: uppercase;
                 position: absolute;
                 bottom: -40px;
-                left: -140px;
+                left: -160px;
                 width: 420px;
+                text-align: center;
             }
         }
     }
@@ -191,6 +187,12 @@
 
 #cont {
     position: relative;
+}
+
+#canvas{
+    position: absolute;
+    left: 102px;
+    top: 101px;
 }
 
 .menu {
@@ -204,7 +206,13 @@
     opacity: 0;
     transition: all 2s;
 }
-
+#procent:after{
+    display: block;
+    right: 0;
+    margin-top: -10px;
+    font-size: 18px;
+    content: '%';
+}
 .menu-open {
     visibility: visible;
     -webkit-transform: translateX(-220px);
@@ -328,7 +336,7 @@
 
 .modile__infoDep {
     position: absolute;
-    margin-top: 127px;
+    margin-top: 15px;
 }
 
 .fix-place.module__infoDep-place {
