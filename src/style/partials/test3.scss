@@ -106,3 +106,53 @@
         color: #000;
     }
 }
+
+
+/*mob test3*/
+
+.hover_scr_on_mob{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    right: 0px;
+    top: 0px;
+    visibility: visible;
+    opacity: 0.9;
+    transition: all 2s;
+    text-align: center;
+    &__text{
+        font-size: 20px;
+        text-transform: uppercase;
+        color: #fff;
+        padding-right: 10px;
+        padding-left: 10px;
+        margin-top: 50px;
+    } 
+}
+
+.btn_on_help_scr{
+   font-size: 30px;
+   display: inline-block;
+   border: 2px solid #fff;
+   color: #fff;
+   margin-top: 100px;
+   padding-right: 15px;
+   padding-left: 15px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   &:hover{
+    text-decoration: none;
+    color: #fff;
+   }
+}
+.hover_scr_on_mob-no{
+    visibility: hidden;
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+    transition: all 1s;
+    opacity: 0;
+    z-index: 50;
+}

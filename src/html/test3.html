@@ -172,6 +172,14 @@
                         </li>
                     </ul>
                 </div>
+
+                  <div class="hover_scr_on_mob hidden" id="help_scr">
+                    <p class="hover_scr_on_mob__text open-sans-lite">Нажмите на событие и выбери к какой партии его отнести <br> 
+                         для продолжения нажми далее
+                    </p>
+                    <a href="#" id ="btn_next" class="btn_on_help_scr open-sans-exbolt">далее</a>
+                  </div>
+
             </div>
         </div></div>
     </section>
@@ -259,8 +267,14 @@
           // });
     });
       if (mobile === true) {
-      alert("ты с мобилы чел");
+      // alert("ты с мобилы чел");
+      $('#help_scr').removeClass('hidden');
     }
+     $('#btn_next').click(function(){
+    
+           $('#help_scr').addClass('hover_scr_on_mob-no');
+     });
+
     </script>
 </body>
 
