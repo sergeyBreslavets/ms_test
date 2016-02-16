@@ -1,12 +1,11 @@
 $(function() {
-    var edin_ros = $('#part1');
-    var ldpr = $('#part2');
-    var kprf = $('#part3');
-    var sprav_ros = $('#part4');
+    var excellent = $('#excellent');
+    var well = $('#well');
+    var bad = $('#bad');
     var boxid = $('#sobit-box');
     var allsob = $('#sobit-box div ');
     var connectClass = '.module-connect';
-    var addClassInPart = 'module__card-inpart';
+    var addClass = 'module__card-inbox';
     var btnsol = $('#solution');
 
 
@@ -17,38 +16,33 @@ $(function() {
         }
     });
 
-    edin_ros.sortable({
+    excellent.sortable({
         connectWith: connectClass,
         receive: function(event, ui) {
             addClassToElInBox(this);
         }
     });
-    ldpr.sortable({
+    well.sortable({
         connectWith: connectClass,
         receive: function(event, ui) {
             addClassToElInBox(this);
         }
     });
-    kprf.sortable({
-        connectWith: connectClass,
-        receive: function(event, ui) {
-            addClassToElInBox(this);
-        }
-    });
-    sprav_ros.sortable({
+    bad.sortable({
         connectWith: connectClass,
         receive: function(event, ui) {
             addClassToElInBox(this);
         }
     });
 
+
     function addClassToElInBox(part) {
         var list = $(part).sortable("toArray");
         for (var i = 0; i < list.length; i++) {
             var id = list[i];
             var el = document.getElementById(id);
-            if ($(el).hasClass(addClassInPart) == false) {
-                $(el).addClass(addClassInPart);
+            if ($(el).hasClass(addClass) == false) {
+                $(el).addClass(addClass);
             }
         };
         showbtn();
@@ -59,8 +53,8 @@ $(function() {
         for (var i = 0; i < list.length; i++) {
             var id = list[i];
             var el = document.getElementById(id);
-            if ($(el).hasClass(addClassInPart) == true) {
-                $(el).removeClass(addClassInPart);
+            if ($(el).hasClass(addClass) == true) {
+                $(el).removeClass(addClass);
             }
         };
     }
@@ -73,131 +67,138 @@ $(function() {
         }
     }
 
-    /*получить значение id в каждой партии */
-    // $('#btn').click(function(){
-    //  edin_ros.sortable("toArray"));
+    /*получить значение id в каждой ячейке */
+    // 
+    //  excellent.sortable("toArray"));
     //  
-    // });
+    // 
 });
 
 
 if (mobile === true) {
-    console.log("mobile detect");
     $('#help_scr').removeClass('hidden');
 }
+var MOUSE_CLICK = "click";
+var MOUSE_DOWN = "mousedown";
+var MOUSE_UP = "mouseup";
+var isTouch = false;
 
-$('#btn_next').click(function() {
+if ("ontouchstart" in window || window.DocumentTouch && document instanceof DocumentTouch) {
+    MOUSE_CLICK = "touchstart";
+    MOUSE_DOWN = "touchstart";
+    MOUSE_UP = "touchend";
+    isTouch = true;
+}
+
+
+$('#btn_next').on(MOUSE_CLICK, function() {
     $('#help_scr').addClass('hover_scr_on_mob-no');
 });
 
-
-
-
-
-
-$('#btn_next-part').click(function() {
+$('#btn_next-part').on(MOUSE_CLICK, function() {
     if (mobile === true) {
         $('#part_scr').removeClass('hover_scr_on_mob-left-on');
     }
 });
 
 /* mob-ver-js */
-var bnt_edros = $('#part_ed_rs');
-var btn_ldpr = $('#part_ldpr');
-var bnt_kprf = $('#part_kprf');
-var btn_sp_ros = $('#part_sp_rs');
+var bnt_excell = $('#bnt_excell');
+var bnt_well = $('#btn_well');
+var bnt_bad = $('#btn_bad');
 var bnt_back = $('#btn_next-part');
+var sobid = ['sob_1', 'sob_2', 'sob_3', 'sob_4', 'sob_5', 'sob_6', 'sob_7', 'sob_8', 'sob_9', 'sob_10', 'sob_11', 'sob_12', 'sob_13'];
+
 var nowid = 'sob_1'; // текуший id 
-bnt_back.click(function() {
+
+bnt_back.on(MOUSE_CLICK, function() {
     if (mobile === true) {
         $('#part_scr').removeClass('hover_scr_on_mob-left-on');
     }
 });
-$('#btn_back_solution').click(function() {
+$('#btn_back_solution').on(MOUSE_CLICK, function() {
     if (mobile === true) {
         $('#part_scr_solutio').removeClass('hover_scr_on_mob-left-on');
     }
 });
 
 
-$('#sob_1').click(function() {
+$('#sob_1').on(MOUSE_CLICK, function() {
     chosesobie('sob_1');
 });
-$('#sob_2').click(function() {
+$('#sob_2').on(MOUSE_CLICK, function() {
     chosesobie('sob_2');
 });
-$('#sob_3').click(function() {
+$('#sob_3').on(MOUSE_CLICK, function() {
     chosesobie('sob_3');
 });
-$('#sob_4').click(function() {
+$('#sob_4').on(MOUSE_CLICK, function() {
     chosesobie('sob_4');
 });
-$('#sob_5').click(function() {
+$('#sob_5').on(MOUSE_CLICK, function() {
     chosesobie('sob_5');
 });
-$('#sob_6').click(function() {
+$('#sob_6').on(MOUSE_CLICK, function() {
     chosesobie('sob_6');
 });
-$('#sob_7').click(function() {
+$('#sob_7').on(MOUSE_CLICK, function() {
     chosesobie('sob_7');
 });
-$('#sob_8').click(function() {
+$('#sob_8').on(MOUSE_CLICK, function() {
     chosesobie('sob_8');
 });
-$('#sob_9').click(function() {
+$('#sob_9').on(MOUSE_CLICK, function() {
     chosesobie('sob_9');
 });
-$('#sob_10').click(function() {
+$('#sob_10').on(MOUSE_CLICK, function() {
     chosesobie('sob_10');
 });
-$('#sob_11').click(function() {
+$('#sob_11').on(MOUSE_CLICK, function() {
     chosesobie('sob_11');
 });
-$('#sob_12').click(function() {
+$('#sob_12').on(MOUSE_CLICK, function() {
     chosesobie('sob_12');
+});
+$('#sob_13').on(MOUSE_CLICK, function() {
+    chosesobie('sob_13');
 });
 
 
-
-bnt_edros.click(function() {
-    var name_part = 'единая россия';
+bnt_excell.on(MOUSE_CLICK, function() {
+    var name_part = 'отлично';
     var attr_part = "1"
     addhovertocard(nowid, name_part, attr_part);
-    bnt_back.click();
+    $('#part_scr').removeClass('hover_scr_on_mob-left-on');
 })
-btn_ldpr.click(function() {
-    var name_part = 'лдпр';
+bnt_well.on(MOUSE_CLICK, function() {
+    var name_part = 'хорошо';
     var attr_part = "2"
     addhovertocard(nowid, name_part, attr_part);
-    bnt_back.click();
+    $('#part_scr').removeClass('hover_scr_on_mob-left-on');
 })
-bnt_kprf.click(function() {
-    var name_part = 'кпрф';
+bnt_bad.on(MOUSE_CLICK, function() {
+    var name_part = 'плохо';
     var attr_part = "3"
     addhovertocard(nowid, name_part, attr_part);
-    bnt_back.click();
+    $('#part_scr').removeClass('hover_scr_on_mob-left-on');
 })
-btn_sp_ros.click(function() {
-    var name_part = 'справедливая россия';
-    var attr_part = "4"
-    addhovertocard(nowid, name_part, attr_part);
-    bnt_back.click();
-})
+
 
 function addhovertocard(idcard, name_part, attr_part) {
     var sob = document.getElementById(idcard);
-    $(sob).find('.module__card').append("<div class='choice_part' part=" + attr_part + "><div class='choice_part-name open-sans-exboltit'>" + name_part + "</div><div class='choice_part__bnt_cansel open-sans-exboltit'>отменить</div></div>");
-    console.log(endSolution());
+    $(sob).find('.module__card').append("<div class='choice_cart' part=" + attr_part + "><div class='choice_cart-name open-sans-exboltit'>" + name_part + "</div><div class='choice_cart__bnt_cansel open-sans-exboltit'>отменить</div></div>");
+    if (endSolution() === true) {
+        $('#part_scr_solutio').addClass('hover_scr_on_mob-left-on');
+    }
 }
 
 function removehovercard(idcard) {
     var sob = document.getElementById(idcard);
-    $(sob).find('.choice_part').remove();
+    $(sob).find('.choice_cart').remove();
 }
 
 function hashoveriinid(idcard) {
     var sob = document.getElementById(idcard);
-    if ($(sob).find('.choice_part').hasClass('choice_part') === true) {
+    if ($(sob).find('.choice_cart').hasClass('choice_cart') === true) {
         return true;
     } else {
         return false;
@@ -206,7 +207,7 @@ function hashoveriinid(idcard) {
 
 function getattrpart(idcard) {
     var sob = document.getElementById(idcard);
-    return $(sob).find('.choice_part').attr("part");
+    return $(sob).find('.choice_cart').attr("part");
 }
 
 function chosesobie(idcard) {
@@ -226,29 +227,28 @@ function chosesobie(idcard) {
 }
 
 function endSolution() {
-    var sobid = ['sob_1', 'sob_2', 'sob_3', 'sob_4', 'sob_5', 'sob_6', 'sob_7', 'sob_8', 'sob_9', 'sob_10', 'sob_11', 'sob_12'];
+
     for (var i = 0; i < sobid.length; i++) {
         if (hashoveriinid(sobid[i]) === false) {
             return false;
         }
     };
-    $('#part_scr_solutio').addClass('hover_scr_on_mob-left-on');
+    // 
     return true;
 }
 
 
 /* fix for ipad */
 if (mobile === true) {
-    $('#allpart').addClass('hidden');
+    $('#allScore').addClass('hidden');
 }
 /*  функция получия id в каждой партии
- ed_ros =1 
- ldpr =2
- kprf =3
- sp_ros =4 
+ отлично =1 
+ хорошо =2
+ плохо =3
 */
 function getidInPart(nomer_part) {
-    var sobid = ['sob_1', 'sob_2', 'sob_3', 'sob_4', 'sob_5', 'sob_6', 'sob_7', 'sob_8', 'sob_9', 'sob_10', 'sob_11', 'sob_12'];
+
     var idMas = [];
     for (var i = 0; i < sobid.length; i++) {
         if (getattrpart(sobid[i]) === nomer_part) {
@@ -258,6 +258,6 @@ function getidInPart(nomer_part) {
     }
     return idMas;
 }
-$('#solut_mob').click(function() {
-    console.log(getidInPart('1'));
-});
+// $('#solut_mob').on(MOUSE_CLICK, function() {
+//     console.log(getidInPart('1'));
+// });

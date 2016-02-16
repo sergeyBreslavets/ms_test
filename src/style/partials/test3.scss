@@ -1,44 +1,56 @@
-.module__part {
+/*score box*/
+.module__score {
     text-align: center;
     border: 2px solid #fff;
     margin-top: 50px;
-    padding-bottom: 50px;
-    min-height: 200px;
-
+    padding-bottom: 20px;
+    min-height: 170px;
 }
 
-.module__part-title {
+.module__score-title {
     font-size: 16px;
     color: #fff;
     text-transform: uppercase;
 }
 
+.module__score-box {
+    margin-top: 10px;
+    min-height: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 1px dashed #fff;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.module__part__logo {
+    width: 100px;
+}
+
 .custom-pd {
     padding-left: 15px;
     padding-right: 15px;
-      @media (max-width: $screen-xs-max) {
-         padding-left: 0px;
-         padding-right: 0px;
+    @media (max-width: $screen-xs-max) {
+        padding-left: 0px;
+        padding-right: 0px;
     }
 }
-
+/*cards*/
 .module__card {
     margin-top: 10px;
     position: relative;
     cursor: move;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    
     text-align: center;
     background: #fff;
     padding-right: 15px;
     padding-left: 15px;
     padding-top: 15px;
+    padding-bottom: 10px;
     margin-top: 20px;
-    min-height: 270px;
-   
+    min-height: 250px;
     &__img {
         width: 100%
-        
     }
     &__text {
         padding-top: 15px;
@@ -51,45 +63,28 @@
 .pt-20 {
     padding-top: 20px;
 }
-.module__card-inpart{ 
 
-                      
-                        width : 100%; 
-                      
-
+.module__card-inbox {
+    width: 100%;
 }
-.module__card-inpart>.module__card{
-    
-   min-height: 70px;
+
+.module__card-inbox>.module__card {
+    min-height: 70px;
     padding-right: 0px;
     padding-left: 0px;
     padding-top: 0px;
-    margin-top: 0px;
+    margin-top: 10px;
     img {
-    
         display: none;
-        
     }
-    p{
+    p {
         padding-top: 5px;
-        
         padding-bottom: 5px;
         text-transform: uppercase;
         color: #000;
     }
 }
-.module__part-box{
-    margin-top: 10px;
-    min-height: 30px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border: 1px dashed #fff;
-
-}
-.custom_row-part{
-    margin-right: 5px;
-    margin-left: 5px;
-}
+/* bnt_solution */
 .btn_solution {
     font-size: 30px;
     color: #fff;
@@ -102,17 +97,16 @@
     padding-right: 20px;
     display: -webkit-inline-box;
     margin-top: 30px;
-
-    &:hover{
+    &:hover {
         text-decoration: none;
         color: #000;
     }
 }
 
 
-/*mob test3*/
+/*mob ver */
 
-.hover_scr_on_mob{
+.hover_scr_on_mob {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -123,38 +117,39 @@
     opacity: 0.9;
     transition: all 2s;
     text-align: center;
-    &__text{
+    &__text {
         font-size: 20px;
         text-transform: uppercase;
         color: #fff;
         padding-right: 10px;
         padding-left: 10px;
         margin-top: 150px;
-    } 
+    }
 }
 
-.btn_on_help_scr{
-   font-size: 30px;
-   display: inline-block;
-   border: 2px solid #fff;
-   color: #fff;
-   margin-top: 100px;
-   padding-right: 15px;
-   padding-left: 15px;
-   padding-top: 10px;
-   padding-bottom: 10px;
-   text-transform: uppercase;
-   text-decoration: none;
-   &:hover{
-    text-decoration: none;
+.btn_on_help_scr {
+    font-size: 30px;
+    display: inline-block;
+    border: 2px solid #fff;
     color: #fff;
-   }
-   &:focus{
+    margin-top: 100px;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
     text-decoration: none;
-    color: #fff;
-   }
+    &:hover {
+        text-decoration: none;
+        color: #fff;
+    }
+    &:focus {
+        text-decoration: none;
+        color: #fff;
+    }
 }
-.hover_scr_on_mob-no{
+
+.hover_scr_on_mob-no {
     visibility: hidden;
     -webkit-transform: translateX(-100%);
     -moz-transform: translateX(-100%);
@@ -165,7 +160,7 @@
     z-index: 50;
 }
 
-.hover_scr_on_mob-left{
+.hover_scr_on_mob-left {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -176,18 +171,18 @@
     opacity: 0;
     transition: all 2s;
     text-align: center;
-
-    &__text{
+    &__text {
         font-size: 20px;
         text-transform: uppercase;
         color: #fff;
         padding-right: 10px;
         padding-left: 10px;
         margin-top: 50px;
-    } 
+    }
 }
-.hover_scr_on_mob-left-on{
-      visibility: visible;
+
+.hover_scr_on_mob-left-on {
+    visibility: visible;
     -webkit-transform: translateX(100%);
     -moz-transform: translateX(100%);
     -o-transform: translateX(100%);
@@ -197,25 +192,24 @@
     z-index: 50;
 }
 
-.hover_scr_on_mob-left__partia{
-   border: 2px solid #fff;
-   color: #fff;
-   margin-top: 10px;
-   padding-right: 15px;
-   padding-left: 15px;
-   padding-top: 10px;
-   padding-bottom: 10px;
-   text-transform: uppercase;
-   margin-left: 15px;
-   margin-right: 15px;
-
-   &:hover{
-    text-decoration: none;
+.hover_scr_on_mob-left__partia {
+    border: 2px solid #fff;
     color: #fff;
-   } 
+    margin-top: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    margin-left: 15px;
+    margin-right: 15px;
+    &:hover {
+        text-decoration: none;
+        color: #fff;
+    }
 }
 
-.choice_part{
+.choice_cart {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -223,24 +217,22 @@
     background: #000;
     top: 0px;
     left: 0px;
-    .choice_part-name{
+    .choice_cart-name {
         font-size: 20px;
         margin-top: 70px;
         color: #fff;
         text-transform: uppercase;
-
     }
-    .choice_part__bnt_cansel{
-         color: #fff;
-         border: 2px dashed #fff;
-         font-size: 20px;
-         margin-top: 20px;
-         padding-left: 15px;
-         padding-right: 15px;
-         padding-bottom: 10px;
-         padding-top: 10px;
-         margin-right: 15px;
-         margin-left: 15px;
-
+    .choice_cart__bnt_cansel {
+        color: #fff;
+        border: 2px dashed #fff;
+        font-size: 20px;
+        margin-top: 20px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        margin-right: 15px;
+        margin-left: 15px;
     }
 }
